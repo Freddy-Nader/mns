@@ -21,9 +21,12 @@ Scraped from https://mauricionader.net/concert-calendar on 2026-09-22. Every wee
 | 13 | dom 13 dic | 18:00 | Ocho décadas del INBAL | Sala Manuel M. Ponce, Palacio de Bellas Artes | CDMX | — |
 | 14 | jue 18 feb **2027** | — | Ponce: Piano Concerto | Teatro Centro de Arte | Guayaquil, Ecuador | — |
 
-The landing page shows #2 through #8 — September and October.
+The landing page shows this month and the next, from `content/fechas.ts`; `/fechas` shows every upcoming date. (v1 showed #2 through #8, hard-coded.)
 
-## ⚠️ The prices on the landing page are invented
+## ⚠️ The prices on the v1 landing page were invented
+
+> **Resolved in the Next.js build (2026-10-06):** the sample prices are not in `content/fechas.ts`. Rows without real access data read *Acceso por confirmar*. The table below is kept as the record of what v1 showed.
+
 
 The client asked for sample prices so the layout could be judged. **Every peso figure on the page was made up by me and has no source.** As of now:
 
