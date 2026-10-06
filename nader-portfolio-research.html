@@ -1,0 +1,447 @@
+<title>Náder Portfolio Research</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+  :root {
+    --paper:      #F3F4F1;
+    --surface:    #FAFBF8;
+    --ink:        #16181C;
+    --muted:      #5B6169;
+    --hairline:   #D3D6D0;
+    --accent:     #1F5E52;
+    --brass:      #8C6621;
+    --flag:       #8A3324;
+    --display: "Bodoni Moda", "Didot", Georgia, serif;
+    --body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+    --mono: "IBM Plex Mono", "SF Mono", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:    #101312;
+      --surface:  #171B1A;
+      --ink:      #E7EAE4;
+      --muted:    #9AA29C;
+      --hairline: #2C3230;
+      --accent:   #74B7A5;
+      --brass:    #D3A85E;
+      --flag:     #DE8266;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:    #101312;
+    --surface:  #171B1A;
+    --ink:      #E7EAE4;
+    --muted:    #9AA29C;
+    --hairline: #2C3230;
+    --accent:   #74B7A5;
+    --brass:    #D3A85E;
+    --flag:     #DE8266;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 72px 24px 120px;
+  }
+
+  /* ---- masthead ---- */
+  .masthead { border-bottom: 2px solid var(--ink); padding-bottom: 28px; }
+  .kicker {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 18px;
+  }
+  h1 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(38px, 7vw, 62px);
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+    margin: 0;
+    text-wrap: balance;
+  }
+  h1 em { font-style: italic; }
+  .standfirst {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 60ch;
+    margin: 20px 0 0;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    margin-top: 26px;
+  }
+
+  /* ---- sections ---- */
+  section { margin-top: 60px; }
+  h2 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 27px;
+    line-height: 1.2;
+    margin: 0 0 6px;
+    text-wrap: balance;
+  }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brass);
+    display: block;
+    margin-bottom: 12px;
+  }
+  h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 30px 0 6px;
+    letter-spacing: -0.005em;
+  }
+  p { margin: 12px 0; max-width: 68ch; }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:hover { color: var(--brass); }
+  a:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+  strong { font-weight: 600; }
+  ul { padding-left: 20px; margin: 12px 0; max-width: 68ch; }
+  li { margin: 7px 0; }
+  .lede { font-size: 17px; }
+
+  /* ---- fact list ---- */
+  .facts {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 10px 24px;
+    margin: 20px 0 0;
+    padding: 0;
+    font-size: 15px;
+  }
+  .facts dt {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-top: 4px;
+  }
+  .facts dd { margin: 0; }
+  @media (max-width: 560px) {
+    .facts { grid-template-columns: 1fr; gap: 2px 0; }
+    .facts dd { margin-bottom: 14px; }
+  }
+
+  /* ---- audience table ---- */
+  .scroller { overflow-x: auto; margin: 22px 0; }
+  table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 14.5px; }
+  th, td { text-align: left; vertical-align: top; padding: 12px 16px 12px 0; border-bottom: 1px solid var(--hairline); }
+  thead th {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+    border-bottom: 1px solid var(--ink);
+  }
+  tbody th { font-weight: 600; white-space: nowrap; }
+
+  /* ---- reference cards ---- */
+  .refs { display: grid; gap: 2px; margin: 22px 0; }
+  .ref {
+    background: var(--surface);
+    border-left: 2px solid var(--accent);
+    padding: 16px 18px;
+  }
+  .ref h4 {
+    margin: 0 0 4px;
+    font-family: var(--display);
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .ref p { margin: 6px 0 0; font-size: 14.5px; }
+  .ref .takeaway {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--brass);
+    letter-spacing: 0.02em;
+  }
+
+  /* ---- callout ---- */
+  .callout {
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-top: 2px solid var(--flag);
+    padding: 18px 20px;
+    margin: 24px 0;
+  }
+  .callout p:first-child { margin-top: 0; }
+  .callout p:last-child { margin-bottom: 0; }
+  .stat {
+    font-family: var(--display);
+    font-size: 21px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    color: var(--flag);
+  }
+
+  /* ---- decisions ---- */
+  .decision {
+    border-top: 1px solid var(--hairline);
+    padding: 16px 0 4px;
+  }
+  .decision:first-of-type { border-top: 1px solid var(--ink); }
+  .decision .q { font-weight: 600; font-size: 16px; margin: 0 0 4px; }
+  .decision .why { color: var(--muted); font-size: 14.5px; margin: 0; }
+
+  /* ---- IA sketch ---- */
+  .ia {
+    font-family: var(--mono);
+    font-size: 13px;
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    padding: 18px 20px;
+    margin: 20px 0;
+    overflow-x: auto;
+  }
+  .ia div { white-space: pre; }
+  .ia .node { color: var(--ink); }
+  .ia .note { color: var(--muted); }
+
+  /* ---- sources ---- */
+  .sources { margin-top: 60px; border-top: 1px solid var(--hairline); padding-top: 22px; }
+  .sources ul { list-style: none; padding: 0; font-size: 13.5px; }
+  .sources li { margin: 6px 0; color: var(--muted); }
+</style>
+
+<div class="wrap">
+  <header class="masthead">
+    <p class="kicker">Fase 1 · Investigación</p>
+    <h1>Portafolio de <em>Mauricio Náder</em></h1>
+    <p class="standfirst">Qué existe hoy, a quién le sirve, qué hacen los sitios que resuelven el mismo problema, y las seis decisiones que hay que tomar antes de diseñar una sola pantalla.</p>
+    <div class="meta">
+      <span>1 sep 2026</span>
+      <span>Fuentes: 14</span>
+      <span>Sin ejecución todavía</span>
+    </div>
+  </header>
+
+  <section>
+    <span class="eyebrow">Materia prima</span>
+    <h2>Lo que ya es verificable de él</h2>
+    <p class="lede">No hay que inventar contenido: la trayectoria está documentada y él ya mantiene una agenda pública al día. El problema no es producir material, es ordenarlo.</p>
+    <dl class="facts">
+      <dt>Nombre</dt><dd>Mauricio Náder Schekaibán (Ciudad de México, 1967)</dd>
+      <dt>Debut</dt><dd>A los 19 años como solista con la Orquesta Sinfónica Nacional en el Palacio de Bellas Artes; empezó a tocar a los nueve</dd>
+      <dt>Formación</dt><dd>Conservatorio Nacional de Música · University of Houston · Eastman School of Music (maestría + Performer's Certificate). Maestros: Carlos Bueno, María Teresa Rodríguez, Nancy Weems, Anton Nel</dd>
+      <dt>Premios</dt><dd>1er lugar, Bartók-Kabalevsky International Piano Competition (EUA, 1996) · Medalla Conmemorativa del Milenio de Austria · beca FONCA «Intérpretes con trayectoria destacada»</dd>
+      <dt>Alcance</dt><dd>Más de 20 países: EUA, Canadá, Alemania, Bulgaria, España, Francia, Italia, Noruega, Portugal, Brasil, Colombia, Costa Rica, Cuba, Ecuador, Perú, Puerto Rico, El Salvador, Belice, China, Líbano, Pakistán</dd>
+      <dt>Grabaciones</dt><dd>Más de 30 producciones discográficas; estrenos en México de <em>Makrokosmos</em> de George Crumb, obra de Ponce y Rolón</dd>
+      <dt>Jurado</dt><dd>Concurso Lang Lang-Telefónica y certámenes nacionales</dd>
+      <dt>Prensa</dt><dd>En EUA lo apodaron «the Indiana Jones of the piano»</dd>
+    </dl>
+
+    <h3>Su activo más subestimado: los programas con nombre</h3>
+    <p>No vende «un recital». Vende conceptos empaquetados y repetibles, y la prensa institucional los cubre por nombre: <em>Piano de Película</em>, <em>Música de cuatro siglos</em>, <em>Música de cinco mundos</em>, <em>150 años de música para piano</em>, <em>Sueño de Amor</em>, <em>Don Quixote's Piano</em>, <em>MAKROpiano</em>, <em>Humor-us Piano</em>, <em>Mexican Piano</em>, <em>American Piano</em>.</p>
+    <p>Eso resuelve de golpe dos públicos opuestos: un programador de festival necesita exactamente esa lista para elegir qué contratar, y un asistente joven entiende «piano de película» sin saber quién es Crumb. Hoy esos programas viven enterrados como subpáginas de un menú llamado «Repertory».</p>
+  </section>
+
+  <section>
+    <span class="eyebrow">Auditoría</span>
+    <h2>mauricionader.net, como está hoy</h2>
+    <p><strong>Plataforma:</strong> Bandzoogle (constructor de sitios para músicos, con assets heredados de HostBaby). Eso importa para la decisión de rehacer vs. reestructurar: ya trae agenda, tienda y lista de correo integradas, pero el control de diseño es limitado.</p>
+    <p><strong>Navegación actual:</strong> Home · Concert Calendar · Bio/Press Notes · Videos · Curso de Música · Repertory · Contact/Booking · Partituras/Scores · Servicios Musicales, más una subpágina por programa.</p>
+
+    <h3>Lo que ya funciona</h3>
+    <ul>
+      <li><strong>La agenda está viva.</strong> Fechas cargadas de septiembre 2025 a febrero 2027, con recinto, dirección con liga a mapa, hora, programa e intérpretes. Muchas marcadas «ENTRADA LIBRE». Él sí mantiene esto: no hay que quitárselo.</li>
+      <li><strong>Las partituras ya se venden.</strong> Vía <span style="font-family:var(--mono);font-size:13px">NaderMusic.lemonsqueezy.com</span> — composiciones originales, transcripciones y arreglos.</li>
+      <li><strong>Es bilingüe</strong> español/inglés en el cuerpo del texto.</li>
+    </ul>
+
+    <h3>Dónde se rompe</h3>
+    <ul>
+      <li><strong>Todo es una lista plana.</strong> Nueve entradas de menú del mismo peso; ningún público tiene un camino evidente de entrada a acción.</li>
+      <li><strong>Cero ligas de boletos.</strong> La agenda dice cuándo y dónde, pero no cómo entrar. En varias fechas el único contacto es un teléfono suelto para «informes e inscripciones».</li>
+      <li><strong>No hay kit de prensa descargable.</strong> Un programador necesita bio en tres longitudes, fotos en alta y lista de programas — hoy tiene que armarlo él mismo.</li>
+      <li><strong>Un solo formulario de contacto</strong> para cinco intenciones muy distintas (contratar, tomar clase, encargar un arreglo, pedir entrevista, saludar).</li>
+      <li><strong>El bilingüismo es texto duplicado</strong>, no un cambio de idioma real.</li>
+      <li><strong>La identidad visual no corresponde al artista.</strong> El sitio es sobrio y textual; su punto de venta es el espectáculo.</li>
+      <li><strong>Riesgo de plataforma a vigilar:</strong> Lemon Squeezy fue adquirido por Stripe y está migrando a Stripe Managed Payments. Sigue operando y acepta altas nuevas, pero no es un cimiento eterno.</li>
+    </ul>
+    <p><strong>Veredicto:</strong> tiene contenido, distribución y el hábito de actualizar. El déficit es de arquitectura y conversión, no de producción. Corolario duro: <em>el rediseño no puede aumentar la carga de mantenimiento.</em></p>
+  </section>
+
+  <section>
+    <span class="eyebrow">Públicos</span>
+    <h2>Cinco audiencias, tres trabajos</h2>
+    <p>La lista de públicos es larga, pero lo que la gente viene a <em>hacer</em> se colapsa en tres tareas. Eso es lo que debe estructurar el sitio.</p>
+    <div class="scroller">
+      <table>
+        <thead>
+          <tr><th>Trabajo</th><th>Quién</th><th>Pregunta real</th><th>Qué necesita ver</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Asistir</th>
+            <td>Público general: jóvenes, adultos mayores, distintos niveles educativos y económicos</td>
+            <td>¿Cuándo, dónde, cuánto, es gratis?</td>
+            <td>Fecha, mapa, hora, «entrada libre» o liga de boletos, un video de 40 segundos que le diga si le va a gustar</td>
+          </tr>
+          <tr>
+            <th>Contratar</th>
+            <td>Programadores de festivales, recintos, universidades, orquestas</td>
+            <td>¿Puedo confiar en él y me alcanza el presupuesto?</td>
+            <td>Bio en varias longitudes, fotos en alta, catálogo de programas, grabaciones, prensa, un contacto con nombre y disponibilidad</td>
+          </tr>
+          <tr>
+            <th>Encargar / aprender</th>
+            <td>Alumnos y sus padres, colegas, quien pide un arreglo o partitura</td>
+            <td>¿Cuánto cuesta, cuánto tarda, cómo empiezo?</td>
+            <td>Un primer paso concreto y de bajo riesgo, no un formulario genérico</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <p><strong>Hallazgo que cambia la arquitectura.</strong> El instinto ante «muchos públicos» es hacer menús por público: <em>Para alumnos / Para organizadores / Para asistentes</em>. Nielsen Norman Group documenta cinco razones para no hacerlo: la gente pertenece a varias categorías a la vez, obligarla a auto-clasificarse la saca de su tarea, se queda con la sospecha de que en la otra sección hay algo que le tocaba, y el contenido duplicado multiplica el mantenimiento.</p>
+      <p>La recomendación es navegación <strong>por tarea</strong>, con puntos de entrada segmentados por público dentro de la home y ligas cruzadas. Un alumno también compra boleto; un programador también encarga un arreglo.</p>
+    </div>
+  </section>
+
+  <section>
+    <span class="eyebrow">Referencias</span>
+    <h2>Qué hacen los sitios que resuelven lo mismo</h2>
+    <div class="refs">
+      <div class="ref">
+        <h4>Anderson &amp; Roe Piano Duo</h4>
+        <p>Catálogo de partituras filtrable por instrumentación (piano a cuatro manos, dos pianos, cinco pianos, otras) <em>y</em> por nivel de dificultad (intermedio, intermedio-avanzado, avanzado). Cada partitura tiene su propia página de producto, junto al video de ellos tocándola.</p>
+        <p class="takeaway">→ Vender la partitura al lado de la grabación de él tocándola. El video es la muestra gratis.</p>
+      </div>
+      <div class="ref">
+        <h4>Gabriela Montero</h4>
+        <p>Estructura canónica de solista: Biografía · Schedule (con submenú de fechas pasadas) · CD · Video · Galería · Prensa · Contacto, con la representación (MonteroPrager) separada en el pie de página.</p>
+        <p class="takeaway">→ Un programador espera exactamente Schedule + Press + un contacto de booking distinguible del contacto general. El archivo de fechas pasadas <em>es</em> credibilidad.</p>
+      </div>
+      <div class="ref">
+        <h4>Nahre Sol</h4>
+        <p>Home · About · Store · Courses · Blog · Contact, con carrito visible. El llamado a la acción principal no es «contáctame»: es suscribirse al correo. YouTube funciona como boca del embudo.</p>
+        <p class="takeaway">→ Comercio y enseñanza viven en el menú principal, no escondidos. Para público joven, el video es la puerta y el correo es la retención.</p>
+      </div>
+      <div class="ref">
+        <h4>Consenso de EPK (Bandzoogle, Groover, iMusician)</h4>
+        <p>Bio en varias longitudes; de tres a seis piezas de audio o video con la mejor al principio, porque el receptor rara vez pasa de la segunda; fotos en varios formatos y tamaños para distintos medios; citas de prensa; fechas; contacto directo. Alojado en el sitio, no como PDF que hay que descargar. Actualizado cada trimestre.</p>
+        <p class="takeaway">→ El press kit es una página, no un archivo. Y necesita fecha de última actualización visible.</p>
+      </div>
+      <div class="ref">
+        <h4>Encargos: sitios de compositores y calculadora de New Music USA</h4>
+        <p>El precio se fija por duración de la obra, número de intérpretes e instrumentación, y presupuesto de quien encarga. El pago típico es mitad al firmar y mitad a la entrega, o tercios: firma, entrega, estreno. Siempre hay una conversación antes de cotizar.</p>
+        <p class="takeaway">→ La página de encargos no es una lista de precios: es un formulario de brief que hace las tres preguntas que permiten cotizar (para qué, para cuántos, para cuándo).</p>
+      </div>
+      <div class="ref">
+        <h4>Agenda de clases: My Music Staff vs. Calendly</h4>
+        <p>My Music Staff (~15 USD/mes) es software de estudio completo: horarios, facturación, asistencia, portal del alumno. Calendly comparte disponibilidad y cobra en el momento de agendar.</p>
+        <p class="takeaway">→ Para un concertista con pocos cupos, no conviene abrir el calendario completo. Un solo tipo de cita — clase de diagnóstico, de pago — filtra mejor que un calendario abierto.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <span class="eyebrow">Contexto local</span>
+    <h2>Tres restricciones mexicanas que mandan sobre el diseño</h2>
+
+    <h3>1. WhatsApp no es un extra, es el canal</h3>
+    <p>La penetración de WhatsApp en México ronda el <span class="stat">93%</span> de usuarios, y un estudio de marzo de 2026 estima que el <span class="stat">64%</span> de las ventas de comercio electrónico del país pasan por ahí; alrededor del 68% de los negocios mexicanos con presencia digital lo usan como canal primario de venta.</p>
+    <p>Un botón de WhatsApp va a superar a cualquier formulario para clases y encargos. Él ya publica teléfono para «informes e inscripciones» en su propia agenda: la conducta ya existe, solo está sin diseñar.</p>
+
+    <h3>2. Él casi nunca vende sus propios boletos</h3>
+    <p>Buena parte de sus fechas son programadas por recintos e instituciones (INBA, casas de cultura, universidades) y muchas son de entrada libre. Vender boletos propios es la excepción. Ticketmaster México cobra cargos por servicio de alrededor del 24% del precio y está bajo escrutinio de Profeco; Passline y eticket son las alternativas para eventos independientes.</p>
+    <p><strong>Implicación:</strong> no construir un sistema de boletaje. Construir un bloque de «cómo asistir» por evento que cubra los tres casos reales: entrada libre, taquilla del recinto, o liga externa de boletos — más mapa, hora y cómo llegar.</p>
+
+    <h3>3. El público de conciertos envejece, y el obstáculo es llegar</h3>
+    <p>Los públicos de música de concierto sesgan mayor; el 45% de las personas con discapacidad en las estadísticas de arte tienen 65 años o más, y la barrera número uno para asistir no es el precio: es el traslado. En grupos focales, lo que más tranquiliza en una página de accesibilidad es encontrar el <em>nombre de una persona</em> a quién contactar.</p>
+    <p><strong>Implicación:</strong> tipografía grande, contraste alto, notas explícitas de transporte y estacionamiento, y un contacto humano con nombre. Eso mismo hace el sitio más usable para todos los demás.</p>
+  </section>
+
+  <section>
+    <span class="eyebrow">Propuesta preliminar</span>
+    <h2>Arquitectura por tarea, en borrador</h2>
+    <p>Sujeta a las decisiones de abajo. Ocho entradas, cada una con una acción dominante:</p>
+    <div class="ia">
+      <div><span class="node">Inicio</span>          <span class="note">— tres entradas segmentadas: próxima fecha · toma clase · encarga un arreglo</span></div>
+      <div><span class="node">Agenda</span>          <span class="note">— próximas fechas + archivo; por evento: cómo asistir, mapa, programa</span></div>
+      <div><span class="node">Programas</span>       <span class="note">— «Piano de Película» y los demás, cada uno como página vendible</span></div>
+      <div><span class="node">Escucha y ve</span>    <span class="note">— video primero; lo mejor al principio</span></div>
+      <div><span class="node">Clases</span>          <span class="note">— clase de diagnóstico como primer paso · masterclasses aparte</span></div>
+      <div><span class="node">Partituras</span>      <span class="note">— catálogo por dificultad e instrumentación, con video</span></div>
+      <div><span class="node">Encargos</span>        <span class="note">— formulario de brief: para qué, para cuántos, para cuándo</span></div>
+      <div><span class="node">Prensa</span>          <span class="note">— press kit vivo: bios, fotos en alta, citas, contacto de booking</span></div>
+    </div>
+  </section>
+
+  <section>
+    <span class="eyebrow">Salida de esta fase</span>
+    <h2>Seis decisiones antes de diseñar</h2>
+    <p>La investigación no cierra estas; son tuyas y de tu papá. Cada una cambia materialmente lo que se dibuja.</p>
+
+    <div class="decision">
+      <p class="q">1. ¿Reestructurar sobre Bandzoogle o construir de cero?</p>
+      <p class="why">Bandzoogle ya le da agenda, tienda y lista de correo sin que nadie programe. Salir de ahí compra control de diseño y cobra en mantenimiento perpetuo.</p>
+    </div>
+    <div class="decision">
+      <p class="q">2. ¿Quién actualiza el sitio después del lanzamiento?</p>
+      <p class="why">Hoy él mantiene la agenda solo, con año y medio de fechas cargadas. Cualquier diseño que exija un desarrollador para publicar una fecha va a morir.</p>
+    </div>
+    <div class="decision">
+      <p class="q">3. ¿Precios públicos o cotización a solicitud?</p>
+      <p class="why">Publicar precios de clases y arreglos filtra y ahorra conversaciones, pero fija un techo con instituciones que pagan más. Puede ser mixto: clases con precio, encargos por cotización.</p>
+    </div>
+    <div class="decision">
+      <p class="q">4. ¿Bilingüe real o español primero con press kit en inglés?</p>
+      <p class="why">Sus públicos internacionales son sobre todo programadores. Quizá solo la ruta de contratación necesita inglés completo, no todo el sitio.</p>
+    </div>
+    <div class="decision">
+      <p class="q">5. ¿WhatsApp, formulario o calendario como puerta principal?</p>
+      <p class="why">Los datos locales apuntan a WhatsApp; el problema es el volumen y el ruido. Probablemente WhatsApp para clases, formulario estructurado para encargos, correo con nombre para contrataciones.</p>
+    </div>
+    <div class="decision">
+      <p class="q">6. ¿Concertista de institución o showman? — la decisión de dirección visual</p>
+      <p class="why">«Solista mexicano de trayectoria, Bellas Artes, Eastman, FONCA» y «el Indiana Jones del piano que toca música de película» jalan hacia lados opuestos en tipografía, color y fotografía. Es la única decisión que bloquea el arranque del diseño; si su respuesta es «las dos», el sitio necesita una sola voz y el press kit puede llevar la otra.</p>
+    </div>
+  </section>
+
+  <section class="sources">
+    <span class="eyebrow">Fuentes</span>
+    <ul>
+      <li><a href="https://www.mauricionader.net">mauricionader.net</a> — sitio actual, agenda, partituras y curso</li>
+      <li><a href="https://musicaenmexico.com.mx/musica-mexicana/mauricio-nader-1967/">Música en México</a> — biografía, premios, discografía</li>
+      <li><a href="https://www.ecured.cu/Mauricio_Nader_Schekaiban">EcuRed</a> · <a href="http://ofcm.cultura.cdmx.gob.mx/mauricio-nader">OFCM</a> — trayectoria y giras</li>
+      <li><a href="https://inba.gob.mx/prensa/23656/mauricio-n-aacuteder-ofrecer-aacute-el-concierto-piano-de-pel-iacutecula-con-piezas-que-evocan-cl-aacutesicos-del-cine">INBA</a> · <a href="https://heraldodemexico.com.mx/cultura/2026/4/13/con-piano-de-pelicula-mauricio-nader-convierte-la-casona-de-xicotencatl-en-un-viaje-por-el-cine-795453.html">El Heraldo de México</a> — programas con nombre</li>
+      <li><a href="https://www.nngroup.com/articles/audience-based-navigation/">NN/g — Audience-Based Navigation: 5 Reasons to Avoid It</a></li>
+      <li><a href="https://www.andersonroe.com/all-scores">Anderson &amp; Roe — catálogo de partituras</a> · <a href="https://www.gabrielamontero.com/">gabrielamontero.com</a> · <a href="https://www.nahresol.com/">nahresol.com</a></li>
+      <li><a href="https://bandzoogle.com/blog/how-to-create-an-epk-for-your-music-with-examples">Bandzoogle</a> · <a href="https://imusician.pro/en/resources/blog/how-to-build-an-electronic-press-kit-for-musicians">iMusician</a> — contenido de un EPK</li>
+      <li><a href="https://newmusicusa.org/nmbx/commissioning-fees-calculator/">New Music USA — calculadora de honorarios por encargo</a> · <a href="https://www.stevedanyew.com/commissions">Steve Danyew — página de encargos</a></li>
+      <li><a href="https://www.mymusicstaff.com/">My Music Staff</a> · <a href="https://lunacal.ai/music-lesson-booking-scheduling-software/best">comparativo de software de agenda para clases</a></li>
+      <li><a href="https://chatsell.net/ecommerce-mexico-top-10-mundial-whatsapp-ventas-2026/">Ecommerce México y WhatsApp, 2026</a> · <a href="https://www.xataka.com.mx/comercio-electronico/whatsapp-principal-medio-para-vender-mexico-meta-tiendanube-creen-que-ahora-ia-puede-hacer-trabajo">Xataka México</a></li>
+      <li><a href="https://www.xataka.com.mx/musica/ticketmaster-sube-comision-sus-boletos-mexico-ahora-seran-caros-espectaculos">Cargos por servicio de Ticketmaster MX</a> · <a href="https://home.passline.com/">Passline</a> · <a href="https://www.eticket.mx/">eticket</a></li>
+      <li><a href="https://www.arts.gov/impact/accessibility/creativity-and-aging">NEA — Creativity &amp; Aging</a> · <a href="https://www.spektrix.com/en-us/blog/website-accessibility-best-practices">Spektrix — accesibilidad web para recintos</a></li>
+      <li><a href="https://www.lemonsqueezy.com/blog/2026-update">Lemon Squeezy + Stripe Managed Payments, actualización 2026</a></li>
+    </ul>
+  </section>
+</div>

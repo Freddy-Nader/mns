@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <style>
+    body { margin: 0; }
+    a { color: #0B4FD6; } a:hover { color: #111214; }
+  </style>
+</helmet>
+
+<div style="width: 1280px; min-height: 940px; background: #F4F4F2; color: #111214; font-family: 'IBM Plex Sans', system-ui, sans-serif; overflow: hidden;">
+
+  <!-- top bar -->
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 32px; border-bottom: 1px solid #111214; font-family: 'IBM Plex Mono', monospace; font-size: 12px;">
+    <div style="letter-spacing: 0.08em;">MAURICIO&nbsp;NADER</div>
+    <div style="display: flex; gap: 22px; color: #5C6066;">
+      <span>agenda</span><span>programas</span><span>escucha</span><span>clases</span><span>encargos</span><span>prensa</span>
+    </div>
+    <div style="color: #5C6066;"><span style="color:#111214;">es</span>·en</div>
+  </div>
+
+  <!-- index header -->
+  <div style="display: grid; grid-template-columns: 1fr 300px; gap: 40px; padding: 34px 32px 26px; border-bottom: 1px solid #C9C9C4;">
+    <div>
+      <div style="font-size: 43px; line-height: 1.08; font-weight: 600; letter-spacing: -0.02em; max-width: 22ch;">Pianista. Todo el trabajo, en un solo índice.</div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5C6066; margin-top: 16px;">1967 · Ciudad de México · conciertos, clases, arreglos por encargo</div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 12px;">
+      <div style="display: flex; justify-content: space-between; border-bottom: 1px dotted #C9C9C4; padding-bottom: 4px;"><span style="color:#5C6066;">fechas próximas</span><span>14</span></div>
+      <div style="display: flex; justify-content: space-between; border-bottom: 1px dotted #C9C9C4; padding-bottom: 4px;"><span style="color:#5C6066;">programas</span><span>10</span></div>
+      <div style="display: flex; justify-content: space-between; border-bottom: 1px dotted #C9C9C4; padding-bottom: 4px;"><span style="color:#5C6066;">discos</span><span>30+</span></div>
+      <div style="display: flex; justify-content: space-between; border-bottom: 1px dotted #C9C9C4; padding-bottom: 4px;"><span style="color:#5C6066;">países</span><span>21</span></div>
+      <div style="display: flex; justify-content: space-between; border-bottom: 1px dotted #C9C9C4; padding-bottom: 4px;"><span style="color:#5C6066;">partituras a la venta</span><span>[N]</span></div>
+    </div>
+  </div>
+
+  <!-- the index itself -->
+  <div style="display: grid; grid-template-columns: 1.6fr 1fr; gap: 0; border-bottom: 1px solid #C9C9C4;">
+
+    <div style="padding: 22px 32px 26px; border-right: 1px solid #C9C9C4;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #0B4FD6; margin-bottom: 12px;">01 — Agenda</div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px;">
+        <div style="display: grid; grid-template-columns: 92px 1fr 130px 92px; gap: 12px; padding: 9px 0; border-top: 1px solid #111214; color: #5C6066; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase;"><span>fecha</span><span>programa</span><span>ciudad</span><span>acceso</span></div>
+        <div style="display: grid; grid-template-columns: 92px 1fr 130px 92px; gap: 12px; padding: 9px 0; border-top: 1px solid #E1E1DD;"><span>[FECHA]</span><span>Piano de Película</span><span>CDMX</span><span style="color:#0B4FD6;">libre</span></div>
+        <div style="display: grid; grid-template-columns: 92px 1fr 130px 92px; gap: 12px; padding: 9px 0; border-top: 1px solid #E1E1DD;"><span>[FECHA]</span><span>Música de cuatro siglos</span><span>[CIUDAD]</span><span style="color:#0B4FD6;">boletos</span></div>
+        <div style="display: grid; grid-template-columns: 92px 1fr 130px 92px; gap: 12px; padding: 9px 0; border-top: 1px solid #E1E1DD;"><span>[FECHA]</span><span>Masterclass</span><span>Puebla</span><span style="color:#0B4FD6;">inscrip.</span></div>
+        <div style="display: grid; grid-template-columns: 92px 1fr 130px 92px; gap: 12px; padding: 9px 0; border-top: 1px solid #E1E1DD;"><span>[FECHA]</span><span>MAKROpiano</span><span>[CIUDAD]</span><span style="color:#0B4FD6;">taquilla</span></div>
+        <div style="display: grid; grid-template-columns: 92px 1fr 130px 92px; gap: 12px; padding: 9px 0; border-top: 1px solid #E1E1DD; color: #5C6066;"><span>—</span><span>ver las 14 fechas</span><span></span><span></span></div>
+      </div>
+    </div>
+
+    <div style="padding: 22px 32px 26px;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #0B4FD6; margin-bottom: 12px;">02 — Programas</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+        <span style="border: 1px solid #111214; padding: 5px 11px; font-size: 13px;">Piano de Película</span>
+        <span style="border: 1px solid #C9C9C4; padding: 5px 11px; font-size: 13px;">Música de cuatro siglos</span>
+        <span style="border: 1px solid #C9C9C4; padding: 5px 11px; font-size: 13px;">Música de cinco mundos</span>
+        <span style="border: 1px solid #C9C9C4; padding: 5px 11px; font-size: 13px;">MAKROpiano</span>
+        <span style="border: 1px solid #C9C9C4; padding: 5px 11px; font-size: 13px;">Mexican Piano</span>
+        <span style="border: 1px solid #C9C9C4; padding: 5px 11px; font-size: 13px;">American Piano</span>
+        <span style="border: 1px solid #C9C9C4; padding: 5px 11px; font-size: 13px;">Humor-us Piano</span>
+        <span style="border: 1px solid #C9C9C4; padding: 5px 11px; font-size: 13px;">Don Quixote's Piano</span>
+        <span style="border: 1px solid #C9C9C4; padding: 5px 11px; font-size: 13px;">Sueño de Amor</span>
+        <span style="border: 1px solid #C9C9C4; padding: 5px 11px; font-size: 13px;">150 años de música para piano</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- services as index rows -->
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0;">
+    <div style="padding: 22px 32px 30px; border-right: 1px solid #C9C9C4;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #0B4FD6; margin-bottom: 10px;">03 — Clases</div>
+      <div style="font-size: 15px; font-weight: 500;">Clase de diagnóstico, 60 min</div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5C6066; margin-top: 6px;">$[PRECIO] MXN · presencial o en línea</div>
+    </div>
+    <div style="padding: 22px 32px 30px; border-right: 1px solid #C9C9C4;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #0B4FD6; margin-bottom: 10px;">04 — Encargos</div>
+      <div style="font-size: 15px; font-weight: 500;">Arreglos, transcripciones, partituras</div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5C6066; margin-top: 6px;">cotización según duración e instrumentación</div>
+    </div>
+    <div style="padding: 22px 32px 30px;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #0B4FD6; margin-bottom: 10px;">05 — Contratación</div>
+      <div style="font-size: 15px; font-weight: 500;">Kit de prensa y disponibilidad</div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5C6066; margin-top: 6px;">bios, fotos en alta, riders, contacto directo</div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

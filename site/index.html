@@ -1,0 +1,676 @@
+<title>Mauricio Nader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap">
+
+<style>
+/* ============================================================
+   Mauricio Nader — landing v1
+   Direction: "Peso y lista" (docs/adr/0003)
+   Tokens:    docs/design/tokens.md
+   Structure: docs/design/landing-page.md
+   Content:   docs/content/*.md   (all copy here is sourced)
+
+   Mobile-first. Single committed theme by design: the site owns
+   its look and does not follow the viewer's dark-mode setting.
+   ============================================================ */
+
+:root {
+  --ink:          #0A0A0A;
+  --paper:        #FFFFFF;
+  --paper-2:      #F4F4F2;
+  --dim:          #6B6B6B;
+  --hairline:     #DCDCD8;
+  --ground-dark:  #0A0A0A;
+  --on-dark:      #FAFAF8;
+  --on-dark-dim:  #6E6E6B;
+  --on-dark-rule: #262624;
+
+  --f-display: Anton, "Arial Narrow", Impact, sans-serif;
+  --f-body:    Archivo, "Helvetica Neue", Arial, sans-serif;
+  --f-edit:    Newsreader, Georgia, serif;
+
+  --gutter: 24px;
+  --section-y: 96px;
+}
+@media (min-width: 768px)  { :root { --gutter: 48px; --section-y: 128px; } }
+@media (min-width: 1100px) { :root { --gutter: 64px; --section-y: 160px; } }
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--dim); }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.on-dark :focus-visible { outline-color: var(--on-dark); }
+img { max-width: 100%; display: block; }
+
+h1, h2, h3, h4 { margin: 0; font-weight: 400; text-wrap: balance; }
+p { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+
+.wrap { padding-inline: var(--gutter); }
+.section { padding-block: var(--section-y); }
+
+.label {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.display {
+  font-family: var(--f-display);
+  font-size: clamp(38px, 6vw, 76px);
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+/* ---- buttons ---------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 14px 30px;
+  border-radius: 999px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: opacity 150ms ease, background 150ms ease, color 150ms ease;
+}
+.btn:hover { opacity: 0.78; color: var(--paper); }
+.btn--ghost { background: transparent; color: var(--ink); }
+.btn--ghost:hover { background: var(--ink); color: var(--paper); opacity: 1; }
+.on-dark .btn--ghost { border-color: var(--on-dark); color: var(--on-dark); }
+.on-dark .btn--ghost:hover { background: var(--on-dark); color: var(--ground-dark); }
+
+/* ---- 1. header -------------------------------------------- */
+/* Three equal-weight zones, not space-between: the wordmark and the
+   hamburger have very different widths, so space-between would push
+   the nav off the page's true centre. The 1fr side columns make the
+   middle column centre on the page regardless of what flanks it. */
+.hdr {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 24px;
+  padding: 16px var(--gutter);
+  background: var(--paper);
+  border-bottom: 1px solid var(--hairline);
+}
+.hdr__mark { justify-self: start; font-weight: 700; font-size: 15px; letter-spacing: 0.01em; white-space: nowrap; }
+.hdr__nav { display: none; justify-self: center; }
+.burger { justify-self: end; }
+@media (min-width: 900px) {
+  .hdr__nav { display: flex; gap: 34px; font-size: 15px; font-weight: 500; }
+}
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 0 9px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+.burger span { display: block; height: 2px; background: var(--ink); transition: transform 200ms ease, opacity 200ms ease; }
+.burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* full menu — holds everything the five-item nav omits */
+.menu {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: var(--ground-dark);
+  color: var(--on-dark);
+  padding: 96px var(--gutter) 48px;
+  overflow-y: auto;
+}
+.menu__close {
+  position: absolute; top: 16px; right: var(--gutter);
+  width: 44px; height: 44px;
+  border: 0; background: none; color: var(--on-dark);
+  font-size: 28px; line-height: 1; cursor: pointer;
+}
+.menu__grid { display: grid; gap: 40px; }
+@media (min-width: 700px) { .menu__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px; } }
+.menu__col h2 { margin-bottom: 18px; color: var(--on-dark-dim); }
+.menu__col li { margin-bottom: 12px; }
+.menu__col a { font-family: var(--f-display); font-size: clamp(26px, 4vw, 38px); text-transform: uppercase; line-height: 1.05; }
+.menu__col a:hover { color: var(--on-dark-dim); }
+.menu__foot { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--on-dark-rule); display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between; font-size: 14px; color: var(--on-dark-dim); }
+
+/* ---- 2. hero ---------------------------------------------- */
+.hero { padding-top: 56px; text-align: center; display: flex; flex-direction: column; align-items: center; }
+@media (min-width: 768px) { .hero { padding-top: 88px; } }
+.hero__name {
+  font-family: var(--f-display);
+  font-size: clamp(58px, 13.2vw, 208px);
+  line-height: 0.86;
+  letter-spacing: -0.012em;
+  margin-top: 20px;
+}
+.hero__name span { display: block; }
+@media (min-width: 900px) { .hero__name span { display: inline; } }
+
+/* Photograph sits below the block, hard-edged. An earlier version pulled
+   it up behind the name with a masked top edge; the fade read as cheap,
+   so it is back to a clean image with a straight top. */
+.hero__shot { width: 100%; margin-top: 48px; }
+@media (min-width: 768px) { .hero__shot { margin-top: 64px; } }
+.hero__shot img { width: 100%; aspect-ratio: 3 / 2; max-height: 720px; object-fit: cover; object-position: center 32%; }
+
+.hero__line { font-size: clamp(18px, 2vw, 21px); color: var(--dim); margin-top: 22px; max-width: 34ch; text-wrap: pretty; }
+/* one line from tablet up — it is a single sentence and reads as one */
+@media (min-width: 768px) { .hero__line { max-width: none; white-space: nowrap; } }
+
+.hero__cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 28px; width: 100%; }
+.hero__cta .btn { flex: 1 1 260px; max-width: 320px; }
+/* Equal widths, not content widths: two pills of different sizes read
+   as lopsided even when the pair is perfectly centred. Same principle
+   as the header — make the flanking elements match. */
+@media (min-width: 560px) { .hero__cta .btn { flex: 0 0 auto; min-width: 210px; } }
+
+/* ---- 3. prensa -------------------------------------------- */
+.dark { background: var(--ground-dark); color: var(--on-dark); }
+
+/* Press sits on the page ground, not on a dark band: it is proof that
+   belongs to the hero above it, not a section of its own. Reduced top
+   padding keeps it reading as a continuation. */
+.prensa { padding-top: 72px; padding-bottom: 0; }
+@media (min-width: 768px) { .prensa { padding-top: 104px; } }
+.prensa__grid { display: grid; gap: 52px; }
+@media (min-width: 900px) { .prensa__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 56px; } }
+.quote { margin: 0; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px; }
+.quote blockquote { margin: 0; font-family: var(--f-edit); font-size: clamp(20px, 1.9vw, 25px); line-height: 1.4; max-width: 28ch; }
+.quote figcaption { font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--dim); }
+
+/* ---- 4. fechas -------------------------------------------- */
+.fechas__head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 40px; }
+.fechas__head .display { font-size: clamp(38px, 7vw, 76px); }
+
+.month {
+  font-family: var(--f-edit);
+  font-size: clamp(32px, 5vw, 64px);
+  line-height: 1;
+  margin-top: 56px;
+  margin-bottom: 20px;
+}
+.month:first-of-type { margin-top: 0; }
+
+/* A day group holds one date and every event on it — this is how the
+   ETA Hoffmann listing is built, and it is what lets two concerts at
+   the same hour on the same day render honestly instead of looking
+   like a duplicate row. */
+.day { border-top: 1px solid var(--ink); display: flex; flex-wrap: wrap; gap: 8px 16px; padding-top: 16px; padding-bottom: 20px; }
+.day__label {
+  flex: 0 0 100%;
+  font-size: clamp(28px, 3.2vw, 44px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+@media (min-width: 992px)  { .day__label { flex-basis: 110px; } }
+@media (min-width: 1400px) { .day__label { flex-basis: 150px; } }
+.day__events { flex: 1 1 0%; display: flex; flex-direction: column; min-width: 0; }
+
+/* Everything in a day group starts at the same y: the day label, the
+   time and the event title share a top edge, and each block descends
+   from there. No padding on the first row, no vertical centring. */
+.ev + .ev { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--hairline); }
+.ev__meta { display: flex; align-items: baseline; gap: 14px; }
+.ev__time { font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.ev__access { font-size: 15px; color: var(--dim); }
+.ev__title { font-size: clamp(23px, 2.7vw, 36px); font-weight: 500; line-height: 1.12; letter-spacing: -0.015em; margin-top: 10px; }
+.ev__sub { font-size: 15px; color: var(--dim); margin-top: 8px; }
+.ev__venue { font-size: 15px; color: var(--dim); margin-top: 4px; }
+.ev__act { margin-top: 16px; }
+
+@media (min-width: 992px) {
+  .ev {
+    display: grid;
+    grid-template-columns: 130px minmax(0, 1fr) auto;
+    gap: 28px;
+    align-items: start;
+  }
+  .ev__meta { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .ev__title { margin-top: 0; }
+  .ev__act { margin-top: 0; justify-self: end; }
+}
+
+.fechas__foot { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; margin-top: 44px; }
+
+/* ---- 5. bio ----------------------------------------------- */
+.bio__grid { display: grid; gap: 40px; align-items: center; }
+@media (min-width: 1000px) { .bio__grid { grid-template-columns: 250px minmax(0, 1fr) 250px; gap: 56px; } }
+.bio__shot { display: none; }
+@media (min-width: 1000px) {
+  .bio__shot { display: block; }
+  .bio__shot img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+  .bio__shot--b { margin-top: 72px; }
+}
+.bio__text { text-align: center; }
+.bio__text p { font-size: clamp(20px, 2.3vw, 30px); line-height: 1.45; letter-spacing: -0.01em; }
+.bio__text p + p { margin-top: 28px; }
+
+/* word-by-word reveal: words sit at 40% opacity and rise to 100%
+   as the paragraph crosses the viewport. Matches the reference's
+   timing exactly — 0.1s per word, 0.05s stagger, linear, scrubbed. */
+.rv { display: inline-block; opacity: 0.4; will-change: opacity; }
+@media (prefers-reduced-motion: reduce) { .rv { opacity: 1 !important; } }
+
+/* ---- 8. footer -------------------------------------------- */
+.ftr { padding-block: 80px 40px; }
+.ftr__grid { display: grid; gap: 40px; }
+@media (min-width: 640px)  { .ftr__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .ftr__grid { grid-template-columns: 1.2fr repeat(4, minmax(0, 1fr)); } }
+.ftr__mark { font-weight: 700; font-size: 15px; letter-spacing: 0.01em; }
+.ftr__col h2 { margin-bottom: 16px; color: var(--on-dark-dim); }
+.ftr__col li { margin-bottom: 12px; font-size: 15px; }
+.ftr__col a:hover { color: var(--on-dark-dim); }
+/* Same three-zone grid as the header: equal side columns so the middle
+   group centres on the page, not on whatever is left over. */
+.ftr__bar {
+  display: grid; gap: 16px; justify-items: center; text-align: center;
+  margin-top: 64px; padding-top: 24px;
+  border-top: 1px solid var(--on-dark-rule);
+  font-size: 13px; color: var(--on-dark-dim);
+}
+@media (min-width: 700px) {
+  .ftr__bar { grid-template-columns: 1fr auto 1fr; align-items: center; gap: 24px; text-align: left; }
+  .ftr__bar > :first-child { justify-self: start; }
+  .ftr__bar > :last-child { justify-self: end; }
+}
+.ftr__social { display: flex; gap: 22px; }
+.ftr__lang b { color: var(--on-dark); font-weight: 500; }
+</style>
+
+<!-- ══════════ 1. HEADER ══════════ -->
+<header class="hdr">
+  <a class="hdr__mark" href="#top">MAURICIO NADER</a>
+  <nav class="hdr__nav" aria-label="Principal">
+    <a href="#fechas">Fechas</a>
+    <a href="#programa">Programa</a>
+    <a href="#bio">Bio</a>
+    <a href="#clases">Clases</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="menu on-dark" id="menu" hidden>
+  <button class="menu__close" id="menuClose" type="button" aria-label="Cerrar menú">&times;</button>
+  <div class="menu__grid">
+    <div class="menu__col">
+      <h2 class="label">Asistir</h2>
+      <ul>
+        <li><a href="#fechas">Fechas</a></li>
+        <li><a href="#programa">Programas</a></li>
+        <li><a href="#">Escucha y ve</a></li>
+      </ul>
+    </div>
+    <div class="menu__col">
+      <h2 class="label">Aprender</h2>
+      <ul>
+        <li><a href="#clases">Clases</a></li>
+        <li><a href="#">Masterclasses</a></li>
+        <li><a href="#">Partituras</a></li>
+      </ul>
+    </div>
+    <div class="menu__col">
+      <h2 class="label">Contratar</h2>
+      <ul>
+        <li><a href="#">Contratación</a></li>
+        <li><a href="#">Kit de prensa</a></li>
+        <li><a href="#">Encargos</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="menu__foot">
+    <span>Bio · Trayectoria · Prensa · Contacto</span>
+    <span class="ftr__lang"><b>ES</b> · EN</span>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- ══════════ 2. HERO ══════════ -->
+  <section class="hero wrap">
+    <p class="label">Pianista · Concertista de Bellas Artes</p>
+    <h1 class="hero__name"><span>MAURICIO</span> <span>NADER</span></h1>
+    <p class="hero__line">Del barroco al cine, en veintidós países y más de treinta discos.</p>
+    <div class="hero__cta">
+      <a class="btn" href="#fechas">Próximas fechas</a>
+      <a class="btn btn--ghost" href="#contacto">Contactar</a>
+    </div>
+    <div class="hero__shot">
+      <img src="img/hero.jpg" alt="Mauricio Nader retratado dentro de la tapa abierta de un piano de cola." width="1600" height="1067">
+    </div>
+  </section>
+
+  <!-- ══════════ 3. PRENSA ══════════ -->
+  <section class="prensa wrap" aria-label="Prensa">
+    <div class="prensa__grid">
+      <figure class="quote">
+        <blockquote>“Cuando Mauricio Náder toca el piano, despierta una parte insólita del público: el mundo de las pasiones, la sensualidad, la exaltación.”</blockquote>
+        <figcaption>Life &amp; Style, 2006 · México</figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>“Today, no other Mexican pianist matches Mauricio Nader’s busy concert schedule, precise technique and intense passion.”</blockquote>
+        <figcaption>Houston Chronicle · Estados Unidos</figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>“From beginning to end, Náder obtained from the piano a pearl-like sound, underlying every phrase with elegance and grace.”</blockquote>
+        <figcaption>Braunschweiger Zeitung, 1999 · Alemania</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ══════════ 4. FECHAS ══════════ -->
+  <section class="section wrap" id="fechas">
+    <div class="fechas__head">
+      <h2 class="display">Próximas fechas</h2>
+      <p style="font-size:15px;color:var(--dim)">Septiembre y octubre de 2026</p>
+    </div>
+
+    <h3 class="month">Septiembre</h3>
+
+    <div class="day">
+      <div class="day__label">Jue 24.</div>
+      <div class="day__events">
+        <article class="ev">
+          <div class="ev__meta"><span class="ev__time">20:00</span><span class="ev__access">$450 MXN</span></div>
+          <div>
+            <h4 class="ev__title">Piano de Película</h4>
+            <p class="ev__sub">A 80 años de Manuel de Falla · Lemonnier, Ravel, Addinsell, Bernstein</p>
+            <p class="ev__venue">Instituto Mexicano para la Justicia, Coyoacán · Ciudad de México</p>
+          </div>
+          <div class="ev__act"><a class="btn" href="#">Comprar boletos</a></div>
+        </article>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day__label">Vie 25.</div>
+      <div class="day__events">
+        <article class="ev">
+          <div class="ev__meta"><span class="ev__time">12:00</span><span class="ev__access">$120 MXN</span></div>
+          <div>
+            <h4 class="ev__title">Geometría del Aire</h4>
+            <p class="ev__sub">En torno a la compositora mexicana Gabriela Ortiz</p>
+            <p class="ev__venue">Castillo de Chapultepec · Ciudad de México</p>
+          </div>
+          <div class="ev__act"><a class="btn" href="#">Comprar boletos</a></div>
+        </article>
+      </div>
+    </div>
+
+    <h3 class="month">Octubre</h3>
+
+    <div class="day">
+      <div class="day__label">Sáb 03.</div>
+      <div class="day__events">
+        <article class="ev">
+          <div class="ev__meta"><span class="ev__time">Todo el día</span><span class="ev__access">$1,200 MXN</span></div>
+          <div>
+            <h4 class="ev__title">Curso virtual — Academia Piano Creativo</h4>
+            <p class="ev__sub">Para pianistas y grupos de cámara</p>
+            <p class="ev__venue">En línea</p>
+          </div>
+          <div class="ev__act"><a class="btn" href="#">Inscribirse</a></div>
+        </article>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day__label">Jue 15.</div>
+      <div class="day__events">
+        <article class="ev">
+          <div class="ev__meta"><span class="ev__time">20:00</span><span class="ev__access">$280 MXN</span></div>
+          <div>
+            <h4 class="ev__title">Flauta y piano</h4>
+            <p class="ev__sub">Feria Internacional del Libro de Monterrey</p>
+            <p class="ev__venue">Museo de Arte Contemporáneo (MARCO) · Monterrey, N.L.</p>
+          </div>
+          <div class="ev__act"><a class="btn" href="#">Comprar boletos</a></div>
+        </article>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day__label">Jue 22.</div>
+      <div class="day__events">
+        <article class="ev">
+          <div class="ev__meta"><span class="ev__time">19:00</span><span class="ev__access">Entrada libre</span></div>
+          <div>
+            <h4 class="ev__title">Filosofía y Música</h4>
+            <p class="ev__sub">Con Gerardo Martínez Cristerna, filósofo</p>
+            <p class="ev__venue">Casa de Tabasco en México «Carlos Pellicer» · Ciudad de México</p>
+          </div>
+          <div class="ev__act"><a class="btn btn--ghost" href="#">Cómo llegar</a></div>
+        </article>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day__label">Vie 30.</div>
+      <div class="day__events">
+        <article class="ev">
+          <div class="ev__meta"><span class="ev__time">19:00</span><span class="ev__access">$350 MXN</span></div>
+          <div>
+            <h4 class="ev__title">Ponce: Concierto para piano</h4>
+            <p class="ev__sub">Orquesta Sinfónica del Estado de México · Rodrigo Macías, director</p>
+            <p class="ev__venue">Toluca, Estado de México</p>
+          </div>
+          <div class="ev__act"><a class="btn" href="#">Comprar boletos</a></div>
+        </article>
+        <article class="ev">
+          <div class="ev__meta"><span class="ev__time">19:00</span><span class="ev__access">Taquilla · $200 MXN</span></div>
+          <div>
+            <h4 class="ev__title">Piano de Película</h4>
+            <p class="ev__sub">A 80 años de Manuel de Falla</p>
+            <p class="ev__venue">Librería Rosario Castellanos, FCE · Ciudad de México</p>
+          </div>
+          <div class="ev__act"><a class="btn btn--ghost" href="#">Cómo llegar</a></div>
+        </article>
+      </div>
+    </div>
+
+    <div class="fechas__foot">
+      <a class="btn btn--ghost" href="#">Ver todas las fechas</a>
+    </div>
+  </section>
+
+  <!-- ══════════ 5. BIO ══════════ -->
+  <section class="dark on-dark section wrap" id="bio">
+    <p class="label" style="text-align:center;color:var(--on-dark-dim);margin-bottom:56px">Sobre Mauricio Nader</p>
+    <div class="bio__grid">
+      <div class="bio__shot">
+        <img src="img/bio1.jpg" alt="Mauricio Nader de perfil, tocando un piano de cola ante el público." width="760" height="428">
+      </div>
+      <div class="bio__text" id="bioText">
+        <p>Empezó a tocar a los nueve años y a los diecinueve debutó como solista con la Orquesta Sinfónica Nacional en el Palacio de Bellas Artes. Estudió en el Conservatorio Nacional, en Houston y en Eastman, donde recibió por unanimidad el Performer’s Certificate.</p>
+        <p>Hoy es concertista de Bellas Artes con el rango de concertino. Ha tocado en veintidós países, grabado más de treinta discos y estrenado en México los Makrokosmos de George Crumb. Da clases particulares, imparte masterclases y escribe arreglos por encargo.</p>
+        <p style="margin-top:44px"><a class="btn btn--ghost" href="#">Ver trayectoria</a></p>
+      </div>
+      <div class="bio__shot bio__shot--b">
+        <img src="img/bio2.jpg" alt="Recital de Mauricio Nader en la Casona de Xicoténcatl, visto desde el público." width="760" height="428">
+      </div>
+    </div>
+  </section>
+
+  <!-- Clases / Contacto / Programa: removed at the client's request.
+       Their nav and footer links stay in place as dead anchors until
+       the sections exist. See docs/design/landing-page.md. -->
+
+</main>
+
+<!-- ══════════ 8. FOOTER ══════════ -->
+<footer class="dark on-dark ftr wrap">
+  <div class="ftr__grid">
+    <div class="ftr__mark">MAURICIO NADER</div>
+    <div class="ftr__col">
+      <h2 class="label">Asistir</h2>
+      <ul>
+        <li><a href="#fechas">Próximas fechas</a></li>
+        <li><a href="#programa">Programas</a></li>
+        <li><a href="#">Conciertos pasados</a></li>
+        <li><a href="#">Escucha y ve</a></li>
+      </ul>
+    </div>
+    <div class="ftr__col">
+      <h2 class="label">Aprender</h2>
+      <ul>
+        <li><a href="#clases">Clases particulares</a></li>
+        <li><a href="#">Masterclasses</a></li>
+        <li><a href="#">Curso de música</a></li>
+        <li><a href="#">Partituras</a></li>
+      </ul>
+    </div>
+    <div class="ftr__col">
+      <h2 class="label">Contratar</h2>
+      <ul>
+        <li><a href="#">Contratación</a></li>
+        <li><a href="#">Kit de prensa</a></li>
+        <li><a href="#">Programas disponibles</a></li>
+        <li><a href="#">Encargos y arreglos</a></li>
+      </ul>
+    </div>
+    <div class="ftr__col">
+      <h2 class="label">Mauricio Nader</h2>
+      <ul>
+        <li><a href="#bio">Bio</a></li>
+        <li><a href="#">Trayectoria</a></li>
+        <li><a href="#">Prensa</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ftr__bar">
+    <span>© 2026 Mauricio Nader</span>
+    <span class="ftr__social"><a href="#">YouTube</a><a href="#">Instagram</a><a href="#">Facebook</a></span>
+    <span class="ftr__lang"><b>ES</b> · EN</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---- hamburger menu ---- */
+  var burger = document.getElementById("burger");
+  var menu   = document.getElementById("menu");
+  var close  = document.getElementById("menuClose");
+
+  function setMenu(open) {
+    menu.hidden = !open;
+    burger.setAttribute("aria-expanded", String(open));
+    burger.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+    document.body.style.overflow = open ? "hidden" : "";
+    if (open) { close.focus(); } else { burger.focus(); }
+  }
+  burger.addEventListener("click", function () { setMenu(menu.hidden); });
+  close.addEventListener("click", function () { setMenu(false); });
+  menu.addEventListener("click", function (e) {
+    if (e.target.tagName === "A") { setMenu(false); }
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !menu.hidden) { setMenu(false); }
+  });
+
+  /* ---- bio: word-by-word reveal ----
+     Scroll-scrubbed opacity wave. Each word fades 40% -> 100% over
+     0.1 of the timeline, staggered 0.05 apart, so consecutive words
+     overlap by half and it reads as a wave rather than discrete pops.
+     Scroll range runs from "paragraph top enters the viewport bottom"
+     to "paragraph bottom reaches the viewport middle", with a little
+     exponential smoothing so it does not feel rigidly pinned to the
+     scrollbar. Skipped entirely under prefers-reduced-motion. */
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var bio = document.getElementById("bioText");
+  if (!bio || reduce.matches) { return; }
+
+  var DUR = 0.1, STAG = 0.05, SMOOTH = 0.35;
+  var words = [];
+
+  Array.prototype.forEach.call(bio.querySelectorAll("p:not(:last-child)"), function (p) {
+    var frag = document.createDocumentFragment();
+    p.textContent.split(/(\s+)/).forEach(function (chunk) {
+      if (!chunk) { return; }
+      if (/^\s+$/.test(chunk)) {
+        frag.appendChild(document.createTextNode(chunk));
+      } else {
+        var s = document.createElement("span");
+        s.className = "rv";
+        s.textContent = chunk;
+        frag.appendChild(s);
+        words.push(s);
+      }
+    });
+    p.textContent = "";
+    p.appendChild(frag);
+  });
+  if (!words.length) { return; }
+
+  var T = DUR + STAG * (words.length - 1);
+  var target = 0, current = 0, last = performance.now();
+
+  function measure() {
+    var r = bio.getBoundingClientRect();
+    var vh = window.innerHeight;
+    var startY = r.top + window.scrollY - vh;
+    var endY = r.top + window.scrollY + r.height - vh / 2;
+    var p = (window.scrollY - startY) / Math.max(1, endY - startY);
+    target = p < 0 ? 0 : p > 1 ? 1 : p;
+  }
+
+  function render() {
+    for (var i = 0; i < words.length; i++) {
+      var local = (current * T - i * STAG) / DUR;
+      var k = local < 0 ? 0 : local > 1 ? 1 : local;
+      words[i].style.opacity = (0.4 + 0.6 * k).toFixed(3);
+    }
+  }
+
+  (function loop(now) {
+    var dt = Math.min(0.1, (now - last) / 1000);
+    last = now;
+    current += (target - current) * (1 - Math.exp(-dt / SMOOTH));
+    render();
+    window.requestAnimationFrame(loop);
+  })(last);
+
+  window.addEventListener("scroll", measure, { passive: true });
+  window.addEventListener("resize", measure);
+  measure();
+  render();
+})();
+</script>

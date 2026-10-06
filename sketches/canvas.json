@@ -1,0 +1,12 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "title": "A · Cartelera", "x": 0, "y": 0, "w": 1280, "h": 940 },
+    { "file": "Programa.dc.html", "title": "B · Programa de mano", "x": 1400, "y": 0, "w": 1280, "h": 940 },
+    { "file": "Indice.dc.html", "title": "C · Índice", "x": 0, "y": 1120, "w": 1280, "h": 940 },
+    { "file": "Muro.dc.html", "title": "D · Luz y muro", "x": 1400, "y": 1120, "w": 1280, "h": 940 }
+  ],
+  "annotations": [
+    { "id": "brief", "x": 2800, "y": 0, "w": 340, "text": "Cuatro direcciones exploradas para el sitio de Mauricio Nader.\n\nNinguna se eligió tal cual: las referencias del cliente (davidsenra.com + ETA Hoffmann Theater) definieron la dirección con más precisión. La final es un híbrido de A (el peso) y B (la estructura editorial), en blanco y negro.\n\nVer docs/adr/0003. Quedan aquí como registro." }
+  ],
+  "launch": { "view": "canvas" }
+}
