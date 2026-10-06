@@ -1,0 +1,105 @@
+.form {
+  border-top: 2px solid var(--ink);
+}
+
+/* Number, question, answer — each row on its own hairline. */
+.row {
+  display: grid;
+  gap: 14px;
+  padding-block: 22px;
+  border-bottom: 1px solid var(--hairline);
+}
+@media (min-width: 700px) {
+  .row {
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 24px;
+    align-items: start;
+  }
+}
+
+.q {
+  display: flex;
+  gap: 14px;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.35;
+  padding-top: 9px;
+}
+.num {
+  font-variant-numeric: tabular-nums;
+  color: var(--dim);
+}
+.optional {
+  font-weight: 400;
+  color: var(--dim);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chip {
+  position: relative;
+  cursor: pointer;
+}
+.chip input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  margin: 0;
+  cursor: pointer;
+}
+.chip span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  font-size: 15px;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease;
+}
+.chip:hover span {
+  border-color: var(--ink);
+}
+.chip input:checked + span {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+.chip input:focus-visible + span {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.field {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 0;
+  border: 0;
+  border-bottom: 1px solid var(--ink);
+  background: transparent;
+  font-size: 17px;
+  border-radius: 0;
+  resize: vertical;
+}
+.field::placeholder {
+  color: var(--dim);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+.privacy {
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--dim);
+  max-width: 60ch;
+}

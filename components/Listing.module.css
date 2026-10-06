@@ -1,0 +1,112 @@
+.empty {
+  font-size: 17px;
+  color: var(--dim);
+  padding-block: 24px;
+  border-top: 1px solid var(--ink);
+}
+
+.month {
+  font-family: var(--f-edit);
+  font-size: clamp(32px, 5vw, 64px);
+  line-height: 1;
+  margin-top: 56px;
+  margin-bottom: 20px;
+}
+.month:first-of-type {
+  margin-top: 0;
+}
+
+/* A day group holds one date and every event on it. */
+.day {
+  border-top: 1px solid var(--ink);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  padding-top: 16px;
+  padding-bottom: 20px;
+}
+.dayLabel {
+  flex: 0 0 100%;
+  font-size: clamp(28px, 3.2vw, 44px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+/* In em, so the widest label ("Mié 30.") fits at every size and every
+   row's events start on the same x. */
+@media (min-width: 992px) {
+  .dayLabel {
+    flex-basis: 4.3em;
+  }
+}
+.events {
+  flex: 1 1 0%;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Everything in a day group starts at the same y. No padding on the
+   first row, no vertical centring. */
+.ev + .ev {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--hairline);
+}
+.meta {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+}
+.time {
+  font-size: 17px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.access {
+  font-size: 15px;
+  color: var(--dim);
+}
+.title {
+  font-size: clamp(23px, 2.7vw, 36px);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  margin-top: 10px;
+}
+.sub {
+  font-size: 15px;
+  color: var(--dim);
+  margin-top: 8px;
+}
+.venue {
+  font-size: 15px;
+  color: var(--dim);
+  margin-top: 4px;
+}
+.act {
+  margin-top: 16px;
+}
+
+@media (min-width: 992px) {
+  .ev {
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr) auto;
+    gap: 28px;
+    align-items: start;
+  }
+  .meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .title {
+    margin-top: 0;
+  }
+  .act {
+    margin-top: 0;
+    justify-self: end;
+  }
+}
