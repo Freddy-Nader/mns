@@ -1,0 +1,73 @@
+.list {
+  border-top: 2px solid var(--ink);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px 24px;
+  align-items: start;
+  padding-block: 20px;
+  border-bottom: 1px solid var(--hairline);
+}
+@media (min-width: 900px) {
+  .row {
+    grid-template-columns: minmax(0, 1fr) 140px auto;
+    align-items: center;
+  }
+}
+
+.autor {
+  font-size: 15px;
+  color: var(--dim);
+}
+.obra {
+  font-size: clamp(22px, 2.4vw, 30px);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin-top: 2px;
+}
+.tipo {
+  font-size: 14px;
+  color: var(--dim);
+  margin-top: 6px;
+}
+
+.price {
+  font-size: 17px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+@media (min-width: 900px) {
+  .price {
+    text-align: right;
+  }
+}
+
+.actions {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+@media (min-width: 900px) {
+  .actions {
+    grid-column: auto;
+    justify-content: flex-end;
+  }
+}
+
+.foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 24px;
+  margin-top: 28px;
+}
+.note {
+  font-size: 14px;
+  color: var(--dim);
+}

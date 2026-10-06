@@ -8,7 +8,7 @@ For a performer whose selling point is the stage, that is the second-biggest con
 
 ## What is on the page right now
 
-All three are **borrowed from third-party publications** and are placeholders. They are in `site/img/`, downsampled from the originals.
+All three are **borrowed from third-party publications** and are placeholders. They are in `public/img/` (and the v1 copy in `site/img/`), downsampled from the originals.
 
 | File | Source | Original | Use |
 |---|---|---|---|

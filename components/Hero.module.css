@@ -1,0 +1,85 @@
+.hero {
+  padding-top: 56px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .hero {
+    padding-top: 88px;
+  }
+}
+
+/* The single loudest element on the site. */
+.name {
+  font-family: var(--f-display);
+  font-size: clamp(58px, 13.2vw, 208px);
+  line-height: 0.86;
+  letter-spacing: -0.012em;
+  margin-top: 20px;
+}
+.name span {
+  display: block;
+}
+@media (min-width: 900px) {
+  .name span {
+    display: inline;
+  }
+}
+
+.line {
+  font-size: clamp(18px, 2vw, 21px);
+  color: var(--dim);
+  margin-top: 22px;
+  max-width: 34ch;
+  text-wrap: pretty;
+}
+/* One line from tablet up — it is a single sentence and reads as one. */
+@media (min-width: 768px) {
+  .line {
+    max-width: none;
+    white-space: nowrap;
+  }
+}
+
+/* Equal widths, not content widths: two pills of different sizes read
+   as lopsided even when the pair is perfectly centred. */
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+  width: 100%;
+}
+.cta a {
+  flex: 1 1 260px;
+  max-width: 320px;
+}
+@media (min-width: 560px) {
+  .cta a {
+    flex: 0 0 auto;
+    min-width: 210px;
+  }
+}
+
+/* Hard top edge. A version that slid the photo under the name behind a
+   faded mask "se ve muy barato" and was reverted. */
+.shot {
+  width: 100%;
+  margin-top: 48px;
+}
+@media (min-width: 768px) {
+  .shot {
+    margin-top: 64px;
+  }
+}
+.shot img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  max-height: 720px;
+  object-fit: cover;
+  object-position: center 32%;
+}

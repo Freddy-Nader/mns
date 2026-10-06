@@ -1,0 +1,13 @@
+.lang {
+  white-space: nowrap;
+}
+.lang b {
+  font-weight: 600;
+}
+.lang a {
+  opacity: 0.6;
+  transition: opacity 150ms ease;
+}
+.lang a:hover {
+  opacity: 1;
+}

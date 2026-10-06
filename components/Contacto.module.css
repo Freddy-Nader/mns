@@ -1,0 +1,98 @@
+.head {
+  display: grid;
+  gap: 24px 64px;
+  margin-bottom: 48px;
+}
+@media (min-width: 1000px) {
+  .head {
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: end;
+  }
+}
+
+/* His own words from his contact page — a person, not a form. */
+.quote {
+  max-width: 34ch;
+}
+@media (min-width: 1000px) {
+  .quote {
+    justify-self: end;
+    text-align: right;
+  }
+}
+.quote blockquote {
+  font-family: var(--f-edit);
+  font-size: var(--t-lead);
+  line-height: 1.35;
+  font-style: italic;
+}
+.quote figcaption {
+  margin-top: 10px;
+  font-size: 15px;
+  color: var(--dim);
+}
+
+/* Four panels; booking is the solid one. */
+.routes {
+  display: grid;
+  gap: 12px;
+}
+@media (min-width: 700px) {
+  .routes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1200px) {
+  .routes {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.route {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 280px;
+  padding: 28px;
+  background: var(--paper);
+}
+.solid {
+  background: var(--ground-dark);
+  color: var(--on-dark);
+}
+.text {
+  font-size: 19px;
+  line-height: 1.4;
+  text-wrap: pretty;
+}
+.go {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+.mail {
+  align-self: flex-start;
+  font-size: 15px;
+  overflow-wrap: anywhere;
+  text-decoration: underline 1px;
+  text-underline-offset: 4px;
+}
+
+.direct {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 28px;
+  margin-top: 40px;
+  font-size: 17px;
+}
+.direct a {
+  text-decoration: underline 1px transparent;
+  text-underline-offset: 4px;
+  transition: text-decoration-color 150ms ease;
+}
+.direct a:hover {
+  text-decoration-color: currentColor;
+}

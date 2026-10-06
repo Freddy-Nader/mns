@@ -1,0 +1,60 @@
+.label {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.grid {
+  display: grid;
+  gap: 40px;
+  align-items: center;
+}
+@media (min-width: 1000px) {
+  .grid {
+    grid-template-columns: 250px minmax(0, 1fr) 250px;
+    gap: 56px;
+  }
+}
+
+/* Photographs flank the text from 1000px up and are hidden below it. */
+.shot {
+  display: none;
+}
+@media (min-width: 1000px) {
+  .shot {
+    display: block;
+  }
+  .shot img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: 10% 50%;
+  }
+  /* Portrait crops of landscape press photos: keep him, and the piano, in frame. */
+  .shotB {
+    margin-top: 72px;
+  }
+  .shotB img {
+    object-position: 62% 50%;
+  }
+}
+
+.text {
+  text-align: center;
+}
+.text p {
+  font-size: clamp(20px, 2.3vw, 30px);
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+.text p + p {
+  margin-top: 28px;
+}
+.text [data-w] {
+  display: inline-block;
+  will-change: opacity;
+}
+.text .cta {
+  margin-top: 44px;
+  font-size: 16px;
+}

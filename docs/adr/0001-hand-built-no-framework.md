@@ -1,5 +1,7 @@
 # The site is hand-built; no web framework
 
+**Superseded** by [ADR-0005](./0005-nextjs.md) on 2026-10-06. Kept as the record of how v1 was built (`site/`).
+
 The site is written by us in plain HTML, CSS and JavaScript. No React, Next, Astro, Svelte or site generator. Third-party services are allowed only where they carry real liability we don't want to own: scheduling (cal.com) and payments (Stripe / Lemon Squeezy).
 
 ## Consequences

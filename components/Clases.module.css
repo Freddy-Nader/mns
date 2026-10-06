@@ -1,0 +1,67 @@
+.grid {
+  display: grid;
+  gap: 48px;
+}
+@media (min-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 40px;
+  }
+}
+
+/* Each offer opens on the listing's 2px rule; details sit on hairlines,
+   label left, value right — HoneyBook's "reserve your spot" list, in the
+   site's own grammar. */
+.offer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding-top: 20px;
+  border-top: 2px solid var(--ink);
+}
+.title {
+  font-size: clamp(24px, 2.4vw, 32px);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+}
+
+.rows {
+  width: 100%;
+  margin-bottom: 8px;
+}
+.rows div {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 12px;
+  padding-block: 12px;
+  border-bottom: 1px solid var(--hairline);
+  font-size: 15px;
+}
+.rows dt {
+  color: var(--dim);
+}
+.rows dd {
+  overflow-wrap: anywhere;
+}
+.offer :global(.btn) {
+  margin-top: auto;
+}
+
+.proof {
+  display: grid;
+  gap: 16px;
+  margin-top: 72px;
+  max-width: 62ch;
+  font-family: var(--f-edit);
+  font-size: var(--t-lead);
+  line-height: 1.4;
+  text-wrap: pretty;
+}
+.position {
+  font-family: var(--f-body);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--dim);
+}
