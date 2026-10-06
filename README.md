@@ -27,3 +27,13 @@ npm run lint
 ## Adding a date
 
 Append to `content/fechas.ts`. Dates, times, venues and prices are language-neutral, so a new date needs no translation. Use one of the four `acceso` states; if the access is unknown, use `por-confirmar` — never an invented price. Past dates can stay: the page filters by today's date and re-renders hourly.
+
+## CI
+
+`.github/workflows/ci.yml` runs lint, types and build on every push to `master` and every PR. Same steps locally:
+
+```sh
+npm run lint && npx next typegen && npx tsc --noEmit && npm run build
+```
+
+`next typegen` must run before `tsc`: `next-env.d.ts` and the route types are generated, not committed.
