@@ -1,6 +1,6 @@
 import { mailtoLink, site, whatsappLink } from "@/content/site";
 import { getDictionary } from "@/lib/dictionaries";
-import type { Locale } from "@/lib/i18n";
+import { href, type Locale } from "@/lib/i18n";
 import styles from "./Contacto.module.css";
 
 /**
@@ -9,7 +9,7 @@ import styles from "./Contacto.module.css";
  * by the brief, press by email. A named person and a direct line close it,
  * because that is what reassures an older audience most.
  */
-export function Contacto({ lang }: { lang: Locale }) {
+export function Contacto({ lang, as: H = "h2" }: { lang: Locale; as?: "h1" | "h2" }) {
   const d = getDictionary(lang);
   const c = d.contacto;
   const external = { target: "_blank", rel: "noopener noreferrer" };
@@ -17,7 +17,7 @@ export function Contacto({ lang }: { lang: Locale }) {
   return (
     <section id="contacto" className="alt section wrap">
       <div className={styles.head}>
-        <h2 className="display">{c.title}</h2>
+        <H className="display">{c.title}</H>
         <figure className={styles.quote}>
           <blockquote>“{c.quote}”</blockquote>
           <figcaption>— {site.name}</figcaption>
@@ -55,7 +55,7 @@ export function Contacto({ lang }: { lang: Locale }) {
           <h3 className="label">{c.encargos.label}</h3>
           <p className={styles.text}>{c.encargos.text}</p>
           <div className={styles.go}>
-            <a className="btn btn--ghost" href="#encargos">
+            <a className="btn btn--ghost" href={href(lang, "/encargos")}>
               {c.encargos.cta}
             </a>
           </div>

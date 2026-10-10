@@ -1,17 +1,13 @@
 import { notFound } from "next/navigation";
 import { Bio } from "@/components/Bio";
-import { Clases } from "@/components/Clases";
 import { Contacto } from "@/components/Contacto";
-import { Encargos } from "@/components/Encargos";
 import { Escucha } from "@/components/Escucha";
 import { Fechas } from "@/components/Fechas";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { Partituras } from "@/components/Partituras";
 import { Prensa } from "@/components/Prensa";
-import { Programas } from "@/components/Programas";
-import { Puertas } from "@/components/Puertas";
+import { Servicios } from "@/components/Servicios";
 import { upcoming } from "@/lib/fechas";
 import { hasLocale } from "@/lib/i18n";
 import { eventsLd, ldJson, personLd } from "@/lib/structured-data";
@@ -21,10 +17,11 @@ import { eventsLd, ldJson, personLd } from "@/lib/structured-data";
 export const revalidate = 3600;
 
 /**
- * One page, three jobs. Proof first (hero, press), then the three doors, then
- * each business in the order a visitor's intent usually arrives: attend,
- * book, learn, buy, commission — and every route ends in a named contact.
- * Order and rationale: docs/design/landing-page.md.
+ * The summary (ADR-0006): who he is (hero), whether he is any good (press),
+ * what you can do with him (Servicios, one door per task page), then a sample
+ * of the most frequent job, how he plays, who he is, and how to reach him.
+ * Each business has its own page. Order and rationale:
+ * docs/design/information-architecture.md.
  */
 export default async function Page({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
@@ -36,14 +33,10 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
       <main>
         <Hero lang={lang} />
         <Prensa lang={lang} />
-        <Puertas lang={lang} />
+        <Servicios lang={lang} />
         <Fechas lang={lang} />
         <Escucha lang={lang} />
-        <Programas lang={lang} />
         <Bio lang={lang} />
-        <Clases lang={lang} />
-        <Partituras lang={lang} />
-        <Encargos lang={lang} />
         <Contacto lang={lang} />
       </main>
       <Footer lang={lang} path="/" />

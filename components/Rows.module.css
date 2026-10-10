@@ -1,0 +1,35 @@
+.rows {
+  width: 100%;
+}
+.rows div {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 12px;
+  padding-block: 12px;
+  border-bottom: 1px solid var(--hairline);
+  font-size: 15px;
+}
+.rows dt {
+  color: var(--dim);
+}
+.rows dd {
+  overflow-wrap: anywhere;
+}
+
+/* The biography's fact sheet: a wider label column and a little more air. */
+.wide div {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 6px;
+  padding-block: 18px;
+  font-size: 17px;
+  line-height: 1.5;
+}
+@media (min-width: 768px) {
+  .wide div {
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: 24px;
+  }
+}
+.wide dd li + li {
+  margin-top: 6px;
+}

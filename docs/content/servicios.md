@@ -21,6 +21,8 @@ From mauricionader.net/additional-information (English only on his site; the Spa
 - *Masterclasses* — "piano and chamber music masterclasses in many countries — for students and professional musicians at all levels."
 - Academic Director / Piano Professor, Centro Mexicano de Posgrados en Música, Puebla, since 2006 — also in [bio.md](./bio.md).
 
+From his **CV for masterclasses, 2026** (PDF), page *Clases Magistrales*, in his own first person: offered **in Spanish or English**, in any city, from the conviction that "el nivel de aprendizaje, la personalidad y los intereses particulares de cada músico requieren de una atención personalizada". Four aims: (1) raise each participant's capacity to "hacer música" — technique, musicality, phrasing, musical memory, concentration, ways of studying a work, habits that cost less physical and mental strain; (2) a space to perform repertoire of their choice, Baroque to contemporary, before an audience, and record it with their own equipment; (3) listeners — musicians and general public — invited; (4) direct dialogue and questions. `/clases` paraphrases these as *Cómo es una masterclass*.
+
 From mauricionader.net/curso-de-musica: "PRÓXIMO CURSO de MÚSICA — Piano / Música de Cámara / Voz y Piano", rules and enrolment at bit.ly/CURSO-MauricioNader, contact curso.musika@gmail.com.
 
 Not on any of his pages, so not on ours: prices, lesson length, online vs. in person, where lessons happen. The research's "paid diagnostic lesson" is still a proposal.

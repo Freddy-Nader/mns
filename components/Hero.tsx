@@ -1,7 +1,7 @@
 import Image from "next/image";
 import heroImg from "@/public/img/hero.jpg";
 import { getDictionary } from "@/lib/dictionaries";
-import type { Locale } from "@/lib/i18n";
+import { href, type Locale } from "@/lib/i18n";
 import styles from "./Hero.module.css";
 
 // Eyebrow → name → line → CTAs → photograph (docs/design/landing-page.md §2).
@@ -20,8 +20,8 @@ export function Hero({ lang }: { lang: Locale }) {
         <a className="btn" href="#fechas">
           {d.fechas}
         </a>
-        <a className="btn btn--ghost" href="#contacto">
-          {d.contacto}
+        <a className="btn btn--ghost" href={href(lang, "/programas")}>
+          {d.contratar}
         </a>
       </div>
       <div className={styles.shot}>

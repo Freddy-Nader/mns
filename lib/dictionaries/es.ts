@@ -11,6 +11,35 @@ export const es = {
     fechasTitle: "Fechas — Mauricio Nader",
     fechasDescription:
       "Todas las fechas publicadas de Mauricio Nader: recitales, conciertos con orquesta y masterclasses.",
+    paginas: {
+      programas: {
+        title: "Programas — Mauricio Nader",
+        description:
+          "Conciertos con nombre y repertorio definidos, y 28 conciertos con orquesta, para festivales, recintos e instituciones.",
+      },
+      clases: {
+        title: "Clases — Mauricio Nader",
+        description:
+          "Clases particulares de piano y música de cámara, masterclasses en español o inglés, y el curso de música.",
+      },
+      partituras: {
+        title: "Partituras — Mauricio Nader",
+        description: "Arreglos, transcripciones y obras originales para piano, con su grabación como muestra.",
+      },
+      encargos: {
+        title: "Encargos — Mauricio Nader",
+        description: "Arreglos, transcripciones y obras nuevas por encargo, para concierto, evento, disco o cine.",
+      },
+      bio: {
+        title: "Biografía — Mauricio Nader",
+        description:
+          "Trayectoria, formación, premios, orquestas, discos y prensa de Mauricio Nader, pianista mexicano y concertista de Bellas Artes.",
+      },
+      contacto: {
+        title: "Contacto — Mauricio Nader",
+        description: "Contratación, clases, encargos y prensa: una vía para cada asunto, y su línea directa.",
+      },
+    },
   },
 
   nav: {
@@ -19,6 +48,8 @@ export const es = {
     programas: "Programas",
     clases: "Clases",
     partituras: "Partituras",
+    encargos: "Encargos",
+    bio: "Bio",
     contacto: "Contacto",
     open: "Abrir menú",
     close: "Cerrar menú",
@@ -51,29 +82,45 @@ export const es = {
     eyebrow: "Pianista · Concertista de Bellas Artes",
     line: "Del barroco al cine, en veintidós países y más de treinta discos.",
     fechas: "Próximas fechas",
-    contacto: "Contactar",
+    contratar: "Contratar",
     photoAlt: "Mauricio Nader retratado dentro de la tapa abierta de un piano de cola.",
   },
 
   prensa: { label: "Prensa" },
 
-  puertas: {
-    label: "Qué puedes hacer aquí",
-    asistir: {
+  servicios: {
+    title: "Qué hace",
+    conciertos: {
+      label: "Conciertos",
       title: "Escúchalo en vivo",
       next: "Próxima fecha",
       none: "Consulta el calendario completo.",
       cta: "Ver fechas",
     },
-    aprender: {
-      title: "Aprende con él",
-      text: "Clases particulares, masterclasses y curso de música, para estudiantes, profesionales y aficionados.",
-      cta: "Ver clases",
-    },
-    contratar: {
+    programas: {
+      label: "Programas",
       title: "Llévalo a tu escenario",
       text: "{n} programas con nombre y 28 conciertos con orquesta, listos para tu temporada.",
       cta: "Ver programas",
+    },
+    clases: {
+      label: "Clases",
+      title: "Aprende con él",
+      text: "Clases particulares, masterclasses en español o inglés y curso de música.",
+      next: "Próxima masterclass",
+      cta: "Ver clases",
+    },
+    partituras: {
+      label: "Partituras",
+      title: "Tócalo tú",
+      text: "{n} arreglos, transcripciones y obras suyas en PDF, desde {min}.",
+      cta: "Ver partituras",
+    },
+    encargos: {
+      label: "Encargos",
+      title: "Un arreglo para ti",
+      text: "Arreglos, transcripciones y obras nuevas, escritos para tu concierto, tu evento o tu grabación.",
+      cta: "Empezar un encargo",
     },
   },
 
@@ -81,8 +128,7 @@ export const es = {
     title: "Próximas fechas",
     pageTitle: "Fechas",
     pageIntro: "Todas sus fechas publicadas, de la más próxima a la más lejana.",
-    and: "y",
-    of: "de",
+    resumen: "Las {n} más próximas de {total} publicadas.",
     all: "Ver todas las fechas",
     empty: "Por ahora no hay fechas publicadas.",
     noTime: "Hora por confirmar",
@@ -144,7 +190,7 @@ export const es = {
       "Empezó a tocar a los nueve años y a los diecinueve debutó como solista con la Orquesta Sinfónica Nacional en el Palacio de Bellas Artes. Estudió en el Conservatorio Nacional, en Houston y en Eastman, donde recibió por unanimidad el Performer’s Certificate.",
       "Hoy es concertista de Bellas Artes con el rango de concertino. Ha tocado en veintidós países, grabado más de treinta discos y estrenado en México los Makrokosmos de George Crumb. Da clases particulares, imparte masterclases y escribe arreglos por encargo.",
     ],
-    cta: "Pedir biografía completa",
+    cta: "Leer la biografía completa",
     photoA: "Mauricio Nader de perfil, tocando un piano de cola ante el público.",
     photoB: "Recital de Mauricio Nader en la Casona de Xicoténcatl, visto desde el público.",
   },
@@ -187,6 +233,30 @@ export const es = {
       "Sus alumnos han ganado concursos nacionales e internacionales y han seguido sus estudios en la Manhattan School of Music, la Universidad de Houston, el Conservatorio Giuseppe Verdi de Milán y el Conservatorio de Róterdam.",
     position:
       "Desde 2006 es director académico y profesor de piano del Centro Mexicano de Posgrados en Música, en Puebla.",
+    metodo: {
+      title: "Cómo es una masterclass",
+      intro:
+        "En español o en inglés, en cualquier ciudad. Parte de una convicción suya: el nivel, la personalidad y los intereses de cada músico piden atención personal.",
+      points: [
+        {
+          t: "Hacer música con más naturalidad",
+          d: "Técnica, musicalidad, fraseo, memoria, concentración y maneras de estudiar una obra, con hábitos que piden menos desgaste físico y mental.",
+        },
+        {
+          t: "Tocar ante público",
+          d: "Cada participante presenta el repertorio que elija, del barroco a lo contemporáneo, y puede grabarse para estudiarlo después.",
+        },
+        {
+          t: "Abierta a oyentes",
+          d: "Músicos y público general pueden asistir a escuchar.",
+        },
+        {
+          t: "Diálogo directo",
+          d: "Preguntas y conversación con él y con los demás participantes.",
+        },
+      ],
+    },
+    upcoming: "Próximas masterclasses y cursos",
   },
 
   partituras: {
@@ -211,6 +281,7 @@ export const es = {
     film: "También graba piano para cine y televisión: Güeros, de Alonso Ruizpalacios, es una de esas películas.",
     price:
       "El precio depende de la duración, la instrumentación y la fecha de entrega. Primero se platica; después se cotiza.",
+    scores: "Escuchar sus arreglos",
     form: {
       label: "Cuéntale tu proyecto",
       que: {
@@ -280,6 +351,23 @@ export const es = {
       bio: "Biografía completa",
       programa: "Programa",
       masterclass: "Masterclass",
+    },
+  },
+
+  bioPage: {
+    title: "Biografía",
+    lead: "Pianista mexicano, concertista de Bellas Artes. En el escenario desde los nueve años, ha tocado en veintidós países de cuatro continentes, grabado más de treinta discos y estrenado en México obras que nadie había tocado aquí.",
+    photoAlt: "Mauricio Nader de perfil, tocando un piano de cola ante el público.",
+    trayectoria: "Trayectoria",
+    datos: "Datos",
+    prensa: "Prensa",
+    prensaIntro: "Citas en su idioma original, tal como se publicaron.",
+    close: {
+      title: "¿Lo quieres en tu temporada?",
+      text: "Escríbele para disponibilidad, honorarios o una versión corta de esta biografía para tu programa de mano.",
+      cta: "Consultar disponibilidad",
+      kit: "Pedir kit de prensa",
+      programas: "Ver programas",
     },
   },
 
