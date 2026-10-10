@@ -20,6 +20,7 @@ npm run lint
 | `components/` | One component per section, each with its CSS Module. |
 | `app/globals.css` | Tokens and shared primitives, from [docs/design/tokens.md](./docs/design/tokens.md). |
 | `docs/design/landing-page.md` | The section-by-section spec. |
+| `docs/design/audit-2026-10.md` | Apple / Emil Kowalski design audit of the built site, and the doc drift it found. |
 | `docs/research/referencias.md` | The UI research behind each section. |
 | `docs/content/` | Where every claim on the page comes from. |
 | `site/` | The hand-built v1, kept as the record of what was approved. |
