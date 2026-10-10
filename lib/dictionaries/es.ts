@@ -5,39 +5,39 @@ export const es = {
   intl: "es-MX",
 
   meta: {
-    title: "Mauricio Nader — Pianista",
+    title: "Mauricio Nader · Pianista",
     description:
-      "Pianista mexicano, concertista de Bellas Artes. Próximas fechas, programas para contratar, clases, partituras y arreglos por encargo.",
-    fechasTitle: "Fechas — Mauricio Nader",
+      "Pianista mexicano, concertista de Bellas Artes. Fechas de concierto, programas para festivales e instituciones, clases de piano, partituras y arreglos por encargo.",
+    fechasTitle: "Fechas · Mauricio Nader",
     fechasDescription:
       "Todas las fechas publicadas de Mauricio Nader: recitales, conciertos con orquesta y masterclasses.",
     paginas: {
       programas: {
-        title: "Programas — Mauricio Nader",
+        title: "Programas · Mauricio Nader",
         description:
           "Conciertos con nombre y repertorio definidos, y 28 conciertos con orquesta, para festivales, recintos e instituciones.",
       },
       clases: {
-        title: "Clases — Mauricio Nader",
+        title: "Clases · Mauricio Nader",
         description:
           "Clases particulares de piano y música de cámara, masterclasses en español o inglés, y el curso de música.",
       },
       partituras: {
-        title: "Partituras — Mauricio Nader",
-        description: "Arreglos, transcripciones y obras originales para piano, con su grabación como muestra.",
+        title: "Partituras · Mauricio Nader",
+        description: "Arreglos, transcripciones y obras originales para piano, en PDF, con grabación en video para escucharlas antes de comprar.",
       },
       encargos: {
-        title: "Encargos — Mauricio Nader",
+        title: "Encargos · Mauricio Nader",
         description: "Arreglos, transcripciones y obras nuevas por encargo, para concierto, evento, disco o cine.",
       },
       bio: {
-        title: "Biografía — Mauricio Nader",
+        title: "Biografía · Mauricio Nader",
         description:
           "Trayectoria, formación, premios, orquestas, discos y prensa de Mauricio Nader, pianista mexicano y concertista de Bellas Artes.",
       },
       contacto: {
-        title: "Contacto — Mauricio Nader",
-        description: "Contratación, clases, encargos y prensa: una vía para cada asunto, y su línea directa.",
+        title: "Contacto · Mauricio Nader",
+        description: "Contratación, clases, encargos y prensa. Una vía para cada asunto y una línea directa.",
       },
     },
   },
@@ -89,37 +89,37 @@ export const es = {
   prensa: { label: "Prensa" },
 
   servicios: {
-    title: "Qué hace",
+    title: "Servicios",
     conciertos: {
       label: "Conciertos",
-      title: "Escúchalo en vivo",
+      title: "Escuchar en vivo",
       next: "Próxima fecha",
       none: "Consulta el calendario completo.",
       cta: "Ver fechas",
     },
     programas: {
       label: "Programas",
-      title: "Llévalo a tu escenario",
-      text: "{n} programas con nombre y 28 conciertos con orquesta, listos para tu temporada.",
+      title: "Contratar un concierto",
+      text: "{n} programas con nombre y 28 conciertos con orquesta, listos para festivales, temporadas e instituciones.",
       cta: "Ver programas",
     },
     clases: {
       label: "Clases",
-      title: "Aprende con él",
-      text: "Clases particulares, masterclasses en español o inglés y curso de música.",
+      title: "Tomar clases",
+      text: "Clases particulares de piano y música de cámara, masterclasses en español o inglés y un curso de música.",
       next: "Próxima masterclass",
       cta: "Ver clases",
     },
     partituras: {
       label: "Partituras",
-      title: "Tócalo tú",
-      text: "{n} arreglos, transcripciones y obras suyas en PDF, desde {min}.",
+      title: "Comprar partituras",
+      text: "{n} arreglos, transcripciones y obras originales para piano, en PDF, desde {min}.",
       cta: "Ver partituras",
     },
     encargos: {
       label: "Encargos",
-      title: "Un arreglo para ti",
-      text: "Arreglos, transcripciones y obras nuevas, escritos para tu concierto, tu evento o tu grabación.",
+      title: "Pedir un arreglo",
+      text: "Arreglos, transcripciones y obras nuevas, escritos para un concierto, un evento o una grabación.",
       cta: "Empezar un encargo",
     },
   },
@@ -127,7 +127,7 @@ export const es = {
   fechas: {
     title: "Próximas fechas",
     pageTitle: "Fechas",
-    pageIntro: "Todas sus fechas publicadas, de la más próxima a la más lejana.",
+    pageIntro: "Todas las fechas publicadas, de la más próxima a la más lejana.",
     resumen: "Las {n} más próximas de {total} publicadas.",
     all: "Ver todas las fechas",
     empty: "Por ahora no hay fechas publicadas.",
@@ -147,7 +147,7 @@ export const es = {
 
   escucha: {
     title: "Escucha y ve",
-    intro: "Sus conciertos y sus arreglos, en video.",
+    intro: "Recitales, conciertos con orquesta y arreglos para piano, en video.",
     channel: "Ver los {n} videos en YouTube",
     play: "Reproducir",
     playing: "Reproduciendo",
@@ -158,7 +158,7 @@ export const es = {
   programas: {
     title: "Programas",
     intro: "Conciertos completos, con nombre y repertorio definidos, listos para tu temporada.",
-    featured: "Su programa más activo · {n} fechas en {year}",
+    featured: "El programa con más fechas · {n} en {year}",
     upcoming: "Próximas fechas de este programa",
     request: "Solicitar este programa",
     requestShort: "Solicitar",
@@ -170,9 +170,9 @@ export const es = {
     photoAlt: "Mauricio Nader en un recital de Piano de Película, visto desde el público.",
     booking: {
       title: "¿Programas una temporada?",
-      text: "Escríbele para disponibilidad, honorarios y material de prensa: biografía, fotografías y repertorio con orquesta.",
+      text: "Disponibilidad y honorarios, por el formulario de contratación. Biografía, fotografías y repertorio con orquesta, en el kit de prensa.",
       emergency:
-        "Disponible para reemplazos de emergencia: prepara conciertos, grabaciones y cursos con poca anticipación cuando otro solista cancela.",
+        "Reemplazos de emergencia. Conciertos, grabaciones y cursos preparados con poca anticipación cuando otro solista cancela, según las fechas disponibles.",
       cta: "Consultar disponibilidad",
       kit: "Pedir kit de prensa",
       stats: [
@@ -198,7 +198,7 @@ export const es = {
   clases: {
     title: "Clases",
     intro:
-      "Para quien prepara un concurso o una audición, y para quien vuelve al piano después de años. Se empieza desde tu propio nivel.",
+      "Para preparar un concurso o una audición, o para volver al piano después de años. Cada alumno empieza desde su nivel.",
     particulares: {
       label: "Clases particulares",
       title: "Piano y música de cámara",
@@ -230,13 +230,13 @@ export const es = {
       cta: "Ver bases e inscripción",
     },
     proof:
-      "Sus alumnos han ganado concursos nacionales e internacionales y han seguido sus estudios en la Manhattan School of Music, la Universidad de Houston, el Conservatorio Giuseppe Verdi de Milán y el Conservatorio de Róterdam.",
+      "Alumnos de estas clases han ganado concursos nacionales e internacionales y continuado sus estudios en la Manhattan School of Music, la Universidad de Houston, el Conservatorio Giuseppe Verdi de Milán y el Conservatorio de Róterdam.",
     position:
-      "Desde 2006 es director académico y profesor de piano del Centro Mexicano de Posgrados en Música, en Puebla.",
+      "Dirección académica y cátedra de piano en el Centro Mexicano de Posgrados en Música, Puebla, desde 2006.",
     metodo: {
       title: "Cómo es una masterclass",
       intro:
-        "En español o en inglés, en cualquier ciudad. Parte de una convicción suya: el nivel, la personalidad y los intereses de cada músico piden atención personal.",
+        "En español o en inglés, en cualquier ciudad. Cada participante recibe atención según su nivel, su personalidad y sus intereses.",
       points: [
         {
           t: "Hacer música con más naturalidad",
@@ -252,7 +252,7 @@ export const es = {
         },
         {
           t: "Diálogo directo",
-          d: "Preguntas y conversación con él y con los demás participantes.",
+          d: "Preguntas y conversación abiertas entre el maestro y los participantes.",
         },
       ],
     },
@@ -262,7 +262,7 @@ export const es = {
   partituras: {
     title: "Partituras",
     intro:
-      "Sus arreglos, transcripciones y obras propias, en PDF. Antes de comprar, escúchalas tocadas por él.",
+      "Arreglos, transcripciones y obras originales para piano, en PDF. La mayoría tiene grabación en video para escucharla antes de comprar.",
     tipo: {
       arreglo: "Arreglo",
       transcripcion: "Transcripción",
@@ -271,19 +271,19 @@ export const es = {
     listen: "Escuchar",
     buy: "Comprar",
     store: "Ver las {n} en la tienda",
-    note: "Pago y descarga en su tienda en línea, Lemon Squeezy.",
+    note: "Pago y descarga inmediata en la tienda en línea (Lemon Squeezy).",
   },
 
   encargos: {
     title: "Encargos",
     intro:
-      "Arreglos, transcripciones y obras nuevas, escritos para tu proyecto. Es el oficio detrás de sus partituras: el Huapango de Moncayo, la Rhapsody in Blue, El amor brujo.",
-    film: "También graba piano para cine y televisión: Güeros, de Alonso Ruizpalacios, es una de esas películas.",
+      "Arreglos, transcripciones y obras nuevas, escritos para un proyecto concreto. Es el mismo oficio de las partituras a la venta, como el Huapango de Moncayo, la Rhapsody in Blue y El amor brujo.",
+    film: "También hay grabación de piano para cine y televisión, como la película Güeros, de Alonso Ruizpalacios.",
     price:
       "El precio depende de la duración, la instrumentación y la fecha de entrega. Primero se platica; después se cotiza.",
-    scores: "Escuchar sus arreglos",
+    scores: "Escuchar los arreglos",
     form: {
-      label: "Cuéntale tu proyecto",
+      label: "Describe tu proyecto",
       que: {
         label: "¿Qué necesitas?",
         options: ["Arreglo", "Transcripción", "Obra nueva", "Grabación", "Otro"],
@@ -300,7 +300,7 @@ export const es = {
         label: "¿Para cuándo?",
         options: ["Menos de un mes", "De uno a tres meses", "Más de tres meses", "Sin fecha fija"],
       },
-      detalles: { label: "Cuéntale más", placeholder: "La obra, la duración, quién la va a tocar…" },
+      detalles: { label: "Más detalles", placeholder: "La obra, la duración, quién la va a tocar…" },
       nombre: { label: "Tu nombre", placeholder: "Nombre y apellido" },
       optional: "opcional",
       whatsapp: "Enviar por WhatsApp",
@@ -363,8 +363,8 @@ export const es = {
     prensa: "Prensa",
     prensaIntro: "Citas en su idioma original, tal como se publicaron.",
     close: {
-      title: "¿Lo quieres en tu temporada?",
-      text: "Escríbele para disponibilidad, honorarios o una versión corta de esta biografía para tu programa de mano.",
+      title: "¿Una fecha en tu temporada?",
+      text: "Disponibilidad y honorarios, por el formulario de contratación. Una versión corta de esta biografía para programas de mano viene en el kit de prensa.",
       cta: "Consultar disponibilidad",
       kit: "Pedir kit de prensa",
       programas: "Ver programas",

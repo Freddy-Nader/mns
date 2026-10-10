@@ -104,7 +104,7 @@ The landing page answers three questions in order: **who** (hero), **is he any g
 
 1. **Hero.** Eyebrow *Pianista · Concertista de Bellas Artes*, the name, the value line (*Del barroco al cine, en veintidós países y más de treinta discos*), then two CTAs: *Próximas fechas* (on-page) and *Contratar* (`/programas`). Who he is and why he matters, in five seconds.
 2. **Prensa.** Three quotes from three countries. Proof comes before any ask.
-3. **Servicios** (*Qué hace*). Five doors, each a full-panel link with a concrete hook:
+3. **Servicios**. Five doors, each a full-panel link with a concrete hook:
    - **Conciertos** → `/fechas`, with the next date.
    - **Programas** → `/programas`, with the number of named programmes and the 28 concertos. Solid ink, because booking is the transaction.
    - **Clases** → `/clases`, with the next masterclass if one is scheduled.
@@ -188,7 +188,7 @@ On phones, add one tap where the path starts in the header (open the menu), or s
 
 ## Naming conventions
 
-One word per concept, in the interface and in the code.
+One word per concept, in the interface and in the code. The voice of the copy itself is in [voz.md](../content/voz.md).
 
 | Concept | ES label | EN label | Route | Notes |
 |---|---|---|---|---|
@@ -199,9 +199,9 @@ One word per concept, in the interface and in the code.
 | Commissioned arrangements | Encargos | Commissions | `/encargos` | The menu's long form is *Encargos y arreglos* |
 | The long biography | Bio (nav) · Biografía (title) | Bio · Biography | `/bio` | |
 | Contact routes | Contacto | Contact | `/contacto` | |
-| The landing's door section | Qué hace | What he does | `/#servicios` | Called *Servicios* in the code and docs; replaces *Puertas* |
+| The landing's door section | Servicios | Services | `/#servicios` | Replaces *Puertas*. Door titles are tasks in the infinitive: *Escuchar en vivo*, *Contratar un concierto*, *Tomar clases*, *Comprar partituras*, *Pedir un arreglo* |
 | The CTA to read the bio | Leer la biografía completa | Read the full biography | — | Replaces *Pedir biografía completa* (email), now that the page exists |
-| The hero's second CTA | Contratar | Book him | `/programas` | Was *Contactar*. The booking job is the one that pays, and Contacto is in the header |
+| The hero's second CTA | Contratar | Book a concert | `/programas` | Was *Contactar*. The booking job is the one that pays, and Contacto is in the header |
 
 ---
 

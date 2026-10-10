@@ -125,12 +125,12 @@ export const datos: { label: Txt; items: Txt[] }[] = [
     label: { es: "Discos", en: "Recordings" },
     items: [
       {
-        es: "Apuntes para piano — música mexicana de los siglos XX y XXI",
-        en: "Apuntes para piano — Mexican music of the 20th and 21st centuries",
+        es: "Apuntes para piano (música mexicana de los siglos XX y XXI)",
+        en: "Apuntes para piano (Mexican music of the 20th and 21st centuries)",
       },
-      { es: "Mauricio Náder à Paris — música de las Américas", en: "Mauricio Náder à Paris — music of the Americas" },
-      { es: "Piano Music — obras de Darián Stávans", en: "Piano Music — works by Darián Stávans" },
-      { es: "Recital — Mozart, Schumann, Falla y Ligeti", en: "Recital — Mozart, Schumann, Falla and Ligeti" },
+      { es: "Mauricio Náder à Paris (música de las Américas)", en: "Mauricio Náder à Paris (music of the Americas)" },
+      { es: "Piano Music (obras de Darián Stávans)", en: "Piano Music (works by Darián Stávans)" },
+      { es: "Recital (Mozart, Schumann, Falla y Ligeti)", en: "Recital (Mozart, Schumann, Falla and Ligeti)" },
       {
         es: "Concierto para piano de Héctor Quintanar, con la Orquesta Sinfónica de la Universidad de Guanajuato y Juan Trigos",
         en: "Héctor Quintanar’s Piano Concerto, with the Guanajuato University Symphony Orchestra under Juan Trigos",

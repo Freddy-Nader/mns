@@ -109,8 +109,8 @@ export const programas: Programa[] = [
     nombre: "Don Quixote’s Piano",
     subtitulo: "to Miguel de Cervantes Saavedra",
     descripcion: {
-      es: "Homenaje a Cervantes, con El retablo de Maese Pedro de Falla y el Don Quijote de Minkus en su propia versión para piano.",
-      en: "A homage to Cervantes, with Falla’s El retablo de Maese Pedro and Minkus’s Don Quixote in his own piano version.",
+      es: "Homenaje a Cervantes, con El retablo de Maese Pedro de Falla y el Don Quijote de Minkus en versión para piano de Mauricio Nader.",
+      en: "A homage to Cervantes, with Falla’s El retablo de Maese Pedro and Minkus’s Don Quixote in a piano version by Mauricio Nader.",
     },
     obras: ["Albéniz", "Falla", "Minkus", "Carbajo", "Camacho", "Lobato"],
     formato: "recital",
@@ -121,8 +121,8 @@ export const programas: Programa[] = [
     nombre: "MAKROpiano",
     subtitulo: "Contemporary Music — Prepared Piano & Extended Techniques",
     descripcion: {
-      es: "Piano preparado y técnicas extendidas, con los Makrokosmos de George Crumb, que él estrenó en México.",
-      en: "Prepared piano and extended techniques, with George Crumb’s Makrokosmos, which he premiered in Mexico.",
+      es: "Piano preparado y técnicas extendidas, con los Makrokosmos de George Crumb, estrenados en México por Mauricio Nader en 2009.",
+      en: "Prepared piano and extended techniques, with George Crumb’s Makrokosmos, given its Mexican premiere by Mauricio Nader in 2009.",
     },
     obras: ["Crumb", "Cage", "Cowell", "Lavista", "Álvarez", "Soto Millán", "Nader"],
     formato: "recital",
@@ -144,8 +144,8 @@ export const programas: Programa[] = [
     slug: "piano-y-orquesta",
     nombre: { es: "Piano y orquesta", en: "Piano & Orchestra" },
     descripcion: {
-      es: "28 conciertos en repertorio, de Brahms a Ponce y Rolón, cuyos conciertos estrenó en varios países. Varios están listos para tocarse con poca anticipación, incluso como reemplazo de emergencia.",
-      en: "28 concertos in repertoire, from Brahms to Ponce and Rolón, whose concertos he premiered in several countries. Several are ready to play at short notice, emergency replacements included.",
+      es: "28 conciertos en repertorio, de Brahms a Ponce y Rolón, cuyos conciertos para piano estrenó Mauricio Nader en varios países. Varios están listos para tocarse con poca anticipación, incluso como reemplazo de emergencia.",
+      en: "28 concertos in repertoire, from Brahms to Ponce and Rolón, whose piano concertos Mauricio Nader premiered in several countries. Several are ready to play at short notice, emergency replacements included.",
     },
     obras: ["Ponce", "Rolón", "Brahms"],
     formato: "orquesta",
