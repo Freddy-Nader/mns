@@ -14,7 +14,7 @@ import { Programas } from "@/components/Programas";
 import { Puertas } from "@/components/Puertas";
 import { upcoming } from "@/lib/fechas";
 import { hasLocale } from "@/lib/i18n";
-import { eventsLd, ldJson, personLd } from "@/lib/structured-data";
+import { eventsLd, ldJson, personLd, websiteLd } from "@/lib/structured-data";
 
 // The listing is filtered by today's date; re-render hourly so past dates
 // drop off without a deploy.
@@ -49,7 +49,7 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
       <Footer lang={lang} path="/" />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: ldJson([personLd(), ...eventsLd(upcoming(), lang)]) }}
+        dangerouslySetInnerHTML={{ __html: ldJson([personLd(), websiteLd(lang), ...eventsLd(upcoming(), lang)]) }}
       />
     </>
   );
