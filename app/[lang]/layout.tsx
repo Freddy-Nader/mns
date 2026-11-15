@@ -30,6 +30,7 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
     metadataBase: new URL(siteUrl),
     title: d.meta.title,
     description: d.meta.description,
+    verification: { google: process.env.GOOGLE_SITE_VERIFICATION },
     alternates: {
       canonical: href(lang),
       languages: { es: "/", en: "/en", "x-default": "/" },
@@ -41,6 +42,12 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
       title: d.meta.title,
       description: d.meta.description,
       images: [{ url: "/img/hero.jpg", width: 1600, height: 1066, alt: d.hero.photoAlt }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: d.meta.title,
+      description: d.meta.description,
+      images: [{ url: "/img/hero.jpg", alt: d.hero.photoAlt }],
     },
   };
 }
