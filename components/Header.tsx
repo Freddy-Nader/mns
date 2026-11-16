@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { getDictionary } from "@/lib/dictionaries";
-import { anchor, href, type Locale } from "@/lib/i18n";
+import { href, type Locale } from "@/lib/i18n";
 import { columns, externalProps } from "@/lib/navigation";
+import { paginas } from "@/lib/routes";
 import { LangSwitch } from "./LangSwitch";
 import { Menu } from "./Menu";
 import styles from "./Header.module.css";
@@ -14,13 +15,14 @@ export function Header({ lang, path }: { lang: Locale; path: string }) {
       <Link className={styles.mark} href={href(lang)}>
         MAURICIO NADER
       </Link>
-      {/* Navigation by task, not by audience. Labels stay short by rule. */}
+      {/* Every task page, so no flow needs the menu on desktop
+          (docs/design/information-architecture.md). Labels stay one word. */}
       <nav className={styles.nav} aria-label={d.nav.label}>
-        <a href={anchor(lang, "fechas")}>{d.nav.fechas}</a>
-        <a href={anchor(lang, "programas")}>{d.nav.programas}</a>
-        <a href={anchor(lang, "clases")}>{d.nav.clases}</a>
-        <a href={anchor(lang, "partituras")}>{d.nav.partituras}</a>
-        <a href={anchor(lang, "contacto")}>{d.nav.contacto}</a>
+        {paginas.map((p) => (
+          <Link key={p} href={href(lang, p)} aria-current={p === path ? "page" : undefined}>
+            {d.nav[p.slice(1) as keyof typeof d.nav]}
+          </Link>
+        ))}
       </nav>
       <div className={styles.end}>
         <Menu openLabel={d.nav.open} closeLabel={d.nav.close}>

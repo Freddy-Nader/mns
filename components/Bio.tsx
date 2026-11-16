@@ -1,13 +1,13 @@
 import Image from "next/image";
 import bioA from "@/public/img/bio1.jpg";
 import bioB from "@/public/img/bio2.jpg";
-import { mailtoLink, site } from "@/content/site";
 import { getDictionary } from "@/lib/dictionaries";
-import type { Locale } from "@/lib/i18n";
+import { href, type Locale } from "@/lib/i18n";
 import { WordReveal } from "./WordReveal";
 import styles from "./Bio.module.css";
 
-// Dark band, centred, with the word-by-word reveal (docs/design/landing-page.md §5).
+// Dark band, centred, with the word-by-word reveal (docs/design/landing-page.md).
+// The landing page's short version; the long form is /bio.
 // Both paragraphs are sourced fact by fact in docs/content/bio.md.
 export function Bio({ lang }: { lang: Locale }) {
   const d = getDictionary(lang);
@@ -29,7 +29,7 @@ export function Bio({ lang }: { lang: Locale }) {
             ))}
           </WordReveal>
           <p className={styles.cta}>
-            <a className="btn btn--ghost" href={mailtoLink(site.email, d.contacto.subjects.bio)}>
+            <a className="btn btn--ghost" href={href(lang, "/bio")}>
               {b.cta}
             </a>
           </p>

@@ -2,6 +2,8 @@
 
 Cross-checked 2026-09-22 across four independent sources: his own site, musicaenmexico.com.mx, inba.gob.mx press bulletins, and Guanajuato state / Cámara de Diputados bulletins. They agreed on every checkable fact. Discrepancies are flagged.
 
+**Added 2026-10-10** for the long-form page at `/bio` (`content/bio.ts`): his own **CV for masterclasses, 2026** (PDF, seven pages: bio in Spanish, masterclass approach, press notes), and a re-read of mauricionader.net/bio-press-notes. New facts from those two are marked **[CV 2026]** or **[site]** below.
+
 ## The short bio on the landing page
 
 > Empezó a tocar a los nueve años y a los diecinueve debutó como solista con la Orquesta Sinfónica Nacional en el Palacio de Bellas Artes. Estudió en el Conservatorio Nacional, en Houston y en Eastman, donde recibió por unanimidad el Performer's Certificate.
@@ -51,6 +53,22 @@ Film work: *Güeros* (Alonso Ruizpalacios), the documentary *El gesto eterno*, a
 
 **Jury** — Lang Lang–Telefónica International (2012), Bartók-Kabalevsky (USA), Bucaramanga International Piano Festival (Colombia), Concurso Nacional "Angélica Morales", Manuel de Falla Piano Competition. Also on FONCA and state grant selection committees.
 
-## For the long-form "Trayectoria" page
+## New in the 2026 CV and the site re-read
 
-Everything above, plus the 800-performance figure, the full award list, the venue list and the discography — that page is where the density belongs. The landing-page bio stays at two paragraphs.
+- **International breakthrough: the Semanas de Música of the Fundación Príncipe de Asturias, Spain, 1994** [CV 2026]. The site calls it "The Prince of Asturias Foundation Series".
+- **"Escenarios de cuatro continentes"** [CV 2026].
+- **INBA rank written as "Primer Concertino"** [CV 2026], in the Grupo de Concertistas del INBA. Matches "concertino, the highest level" above.
+- **Orchestras abroad** [site]: Symphony Orchestras of El Salvador, Panama, Heredia (Costa Rica), El Paso (USA) and Cuenca (Ecuador); Bogotá Philharmonic; National Symphony Orchestra of Lebanon; Lebanese Philharmonic; Guayaquil Municipal Orchestra; Petrobras Sinfônica (Brazil); Orfeo Chamber Orchestra (Bulgaria); Chinese Orchestra of Traditional Instruments.
+- **Venue added**: Teatro Sánchez Aguilar, Guayaquil [site]; Auditorio Nacional, Mexico City [CV 2026].
+- **Album subtitles** [CV 2026]: *Apuntes para piano* (Mexican music of the 20th and 21st centuries), *Mauricio Náder à Paris* (music of the Americas), *Piano Music* (works by Darián Stávans), *Recital* (Mozart, Schumann, Falla, Ligeti). Album titles are proper nouns and keep their printed accent.
+- **Documentary director**: *El gesto eterno*, Javier Velázquez Cabrero [site].
+- **Juries added**: Villahermosa International Piano Competition [CV 2026, site]; Fiestas Iberoamericanas de las Artes, Puerto Rico [site, not used].
+- **Representation** [site]: "At present he performs through Axismundi Management and the Group of Concert Artists (INBA)". ⚠️ Not on the page: ask him whether Axismundi is current and whether booking enquiries should name it.
+- **Shorter bios on request** [site]: "FOR SHORTER VERSIONS of this Biography, please write: mnader@prodigy.net.mx". ⚠️ A second, older address; the page sends bio requests to Nader.Musica@gmail.com. Ask which is live.
+- ⚠️ **Countries**: both sources list 23 places including Mexico and Puerto Rico; "22 countries" is the figure everyone uses. The fact sheet shows the list without a count.
+- ⚠️ **Centro Mexicano de Posgrados**: the site's current English bio now says he "served as Academic Piano Professor" (past). The page keeps the present tense established above until he confirms.
+- ⚠️ **Own works**: this file says *Four Parodies*, the store sells *Tres parodias*. The page names neither until he confirms.
+
+## The long-form page
+
+Built at `/bio` ([ADR-0006](../adr/0006-landing-summary-and-task-pages.md)): lead, the four numbers, five paragraphs of *Trayectoria*, a fact sheet (training, awards, orchestras, venues, countries, recordings, film and TV, juries, ensembles) and the full press set. The landing-page bio stays at two paragraphs.

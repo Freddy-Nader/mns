@@ -2,7 +2,8 @@ import { programaDestacado, programas, type Programa } from "@/content/programas
 import { mailtoLink, site } from "@/content/site";
 import { fill, getDictionary, tx } from "@/lib/dictionaries";
 import { datesInYear, shortDate, today, upcoming } from "@/lib/fechas";
-import type { Locale } from "@/lib/i18n";
+import { href, type Locale } from "@/lib/i18n";
+import { Stats } from "./Stats";
 import styles from "./Programas.module.css";
 
 /**
@@ -10,7 +11,7 @@ import styles from "./Programas.module.css";
  * actually buys, until now buried under "Repertory". Treated as a poster
  * wall, after the ETA Hoffmann Theater's season grid.
  */
-export function Programas({ lang }: { lang: Locale }) {
+export function Programas({ lang, as: H = "h2" }: { lang: Locale; as?: "h1" | "h2" }) {
   const d = getDictionary(lang);
   const p = d.programas;
   const featured = programas.find((x) => x.slug === programaDestacado)!;
@@ -28,7 +29,7 @@ export function Programas({ lang }: { lang: Locale }) {
     <>
       <section id="programas" className="section wrap">
         <div className="section-head">
-          <h2 className="display">{p.title}</h2>
+          <H className="display">{p.title}</H>
           <p>{p.intro}</p>
         </div>
 
@@ -44,7 +45,7 @@ export function Programas({ lang }: { lang: Locale }) {
                 <ul>
                   {next.map((f) => (
                     <li key={f.id}>
-                      <a href="#fechas">
+                      <a href={href(lang, "/fechas")}>
                         <b>{shortDate(f.dia, lang)}</b> {f.recinto.nombre ?? f.recinto.ciudad}
                       </a>
                     </li>
@@ -105,14 +106,7 @@ function Booking({ lang }: { lang: Locale }) {
   const b = d.programas.booking;
   return (
     <section className={`${styles.booking} alt wrap`} aria-labelledby="booking-title">
-      <ul className={styles.stats}>
-        {b.stats.map((s) => (
-          <li key={s.l}>
-            <span className={styles.statN}>{s.n}</span>
-            <span className={styles.statL}>{s.l}</span>
-          </li>
-        ))}
-      </ul>
+      <Stats stats={b.stats} />
       <div className={styles.bookingBody}>
         <h2 id="booking-title" className="display">
           {b.title}

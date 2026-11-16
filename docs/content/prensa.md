@@ -43,6 +43,16 @@ It can still be used — but only attributed to the firm by name, and not in a s
 
 Several quotes contain typos as published on his own site — "voluptuousity", "wonderfull", "Masterfull", "virtuosism". These are his site's, not ours. If a quote is used on the new site, fix the typo silently or pick a different quote; do not reproduce the error.
 
+## The full set on /bio#prensa (`citasBio`)
+
+Added 2026-10-10 from his **2026 CV**, which prints the Mexican and Latin American quotes **in Spanish — their original language** — where his site only had English translations. So the rule (original language, verbatim) can now be met for them:
+
+- *El Nuevo Día*, 2009, Puerto Rico · *Vanguardia Liberal*, 2001, Colombia · *Siglo 21*, 1997 · *Semanal*, 2000 · *Revista Siempre*, 1993 · *El Informador* (Rachmaninoff) · *Diario de Yucatán* (Grieg; the CV's bracketed "[Concierto para piano y orquesta]" is dropped) · Ramón Montes de Oca, 2004 — all in Spanish from the CV.
+- *Dawn*, 2009 and *The News*, 2009 (Pakistan, English-language papers) — English, from his site.
+- Life & Style in full (the landing trims it), Houston Chronicle and Braunschweiger Zeitung as above.
+
+Left out: the Indiana Jones line (promotional, see above); *Star-Telegram* (only a weak one-liner); quotes whose original is Italian or Portuguese (*La Sicilia*, the Rio review), which exist only in translation; and quotes attributed to a bare URL.
+
 ## Gap
 
 The press page is undated as a whole and the newest quote is from 2009. For the *Kit de prensa* we will want recent criticism — the 2026 coverage in *El Heraldo de México* and *am.com.mx* exists but is descriptive reporting, not review. Worth asking him whether newer reviews exist that never made it onto the site.

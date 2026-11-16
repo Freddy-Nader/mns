@@ -15,21 +15,6 @@ export function upcoming(from = today(), list: Fecha[] = todas): Fecha[] {
   return list.filter((f) => f.dia >= from).sort(byDate);
 }
 
-/** "YYYY-MM" of the month after the one `from` falls in. */
-function nextMonth(from: string): string {
-  const [y, m] = from.split("-").map(Number);
-  return m === 12 ? `${y + 1}-01` : `${y}-${String(m + 1).padStart(2, "0")}`;
-}
-
-/** The landing shows this month and the next (docs/design/landing-page.md §4). */
-export function upcomingWindow(from = today()) {
-  const months = [from.slice(0, 7), nextMonth(from)];
-  return {
-    months,
-    fechas: upcoming(from).filter((f) => f.dia.slice(0, 7) <= months[1]),
-  };
-}
-
 export type DayGroup = { dia: string; fechas: Fecha[] };
 export type MonthGroup = { month: string; days: DayGroup[] };
 
@@ -78,19 +63,6 @@ export function shortDate(dia: string, lang: Locale): string {
   return lang === "es"
     ? `${weekday} ${Number(dia.slice(8))} ${month}`
     : `${weekday}, ${capitalize(month)} ${Number(dia.slice(8))}`;
-}
-
-/** "Octubre y noviembre de 2026" / "October and November 2026". */
-export function rangeLabel(months: string[], lang: Locale): string {
-  const d = getDictionary(lang).fechas;
-  const [a, b] = months;
-  const name = (m: string) => fmt(m, lang, { month: "long" });
-  const year = (m: string) => [d.of, m.slice(0, 4)].filter(Boolean).join(" ");
-  const text =
-    a.slice(0, 4) === b.slice(0, 4)
-      ? `${name(a)} ${d.and} ${name(b)} ${year(b)}`
-      : `${name(a)} ${year(a)} ${d.and} ${name(b)} ${year(b)}`;
-  return capitalize(text);
 }
 
 /** How many dates a programme has in the given calendar year. */

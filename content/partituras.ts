@@ -93,3 +93,6 @@ export const partituras: Partitura[] = [
 
 /** Listings in the store, counted on the same date as the prices above. */
 export const partiturasEnTienda = 28;
+
+/** Cheapest listing in the store on 2026-10-06 (docs/content/servicios.md). */
+export const precioMinimoTienda = 150;

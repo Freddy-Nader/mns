@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { paginas } from "./lib/routes";
 
 const nextConfig: NextConfig = {
   // Spanish is the site's primary language and lives at the root; English
@@ -7,13 +8,13 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [
       { source: "/", destination: "/es" },
-      { source: "/fechas", destination: "/es/fechas" },
+      ...paginas.map((p) => ({ source: p, destination: `/es${p}` })),
     ];
   },
   async redirects() {
     return [
       { source: "/es", destination: "/", permanent: false },
-      { source: "/es/fechas", destination: "/fechas", permanent: false },
+      ...paginas.map((p) => ({ source: `/es${p}`, destination: p, permanent: false })),
     ];
   },
   images: {

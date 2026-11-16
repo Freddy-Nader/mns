@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { paginas } from "@/lib/routes";
 import { siteUrl } from "@/lib/site-url";
 
 // Both languages are listed as separate entries, each pointing at the other
@@ -9,11 +10,13 @@ const routes = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
-  return routes.flatMap(({ path, priority, changeFrequency }) => {
-    const es = `${siteUrl}${path}`;
-    const en = `${siteUrl}/en${path}`;
-    const alternates = { languages: { es, en, "x-default": es } };
-    return [es, en].map((url) => ({ url, lastModified, changeFrequency, priority, alternates }));
-  });
+  return ["/", ...paginas].map((path) => ({
+    url: `${siteUrl}${path === "/" ? "" : path}`,
+    alternates: {
+      languages: {
+        es: `${siteUrl}${path === "/" ? "" : path}`,
+        en: `${siteUrl}/en${path === "/" ? "" : path}`,
+      },
+    },
+  }));
 }

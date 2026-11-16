@@ -1,7 +1,9 @@
-import { site, whatsappLink } from "@/content/site";
+import { mailtoLink, site, whatsappLink } from "@/content/site";
 import { getDictionary, tx } from "@/lib/dictionaries";
-import { shortDate, upcoming } from "@/lib/fechas";
-import { anchor, type Locale } from "@/lib/i18n";
+import { groupByMonth, shortDate, upcoming } from "@/lib/fechas";
+import type { Locale } from "@/lib/i18n";
+import { Listing } from "./Listing";
+import { Rows } from "./Rows";
 import styles from "./Clases.module.css";
 
 /**
@@ -9,15 +11,16 @@ import styles from "./Clases.module.css";
  * generic form. WhatsApp for lessons: it is how Mexico buys services, and he
  * already publishes a mobile number for "informes e inscripciones".
  */
-export function Clases({ lang }: { lang: Locale }) {
+export function Clases({ lang, as: H = "h2" }: { lang: Locale; as?: "h1" | "h2" }) {
   const d = getDictionary(lang);
   const c = d.clases;
-  const masterclass = upcoming().find((f) => f.tipo === "masterclass");
+  const teaching = upcoming().filter((f) => f.tipo === "masterclass" || f.tipo === "curso");
+  const masterclass = teaching.find((f) => f.tipo === "masterclass");
 
   return (
     <section id="clases" className="section wrap">
       <div className="section-head">
-        <h2 className="display">{c.title}</h2>
+        <H className="display">{c.title}</H>
         <p>{c.intro}</p>
       </div>
 
@@ -54,7 +57,7 @@ export function Clases({ lang }: { lang: Locale }) {
                 : []),
             ]}
           />
-          <a className="btn btn--ghost" href={anchor(lang, "contacto")}>
+          <a className="btn btn--ghost" href={mailtoLink(site.email, d.contacto.subjects.masterclass)}>
             {c.masterclasses.cta}
           </a>
         </article>
@@ -69,23 +72,37 @@ export function Clases({ lang }: { lang: Locale }) {
         </article>
       </div>
 
+      <section className={styles.metodo} aria-labelledby="metodo-title">
+        <div className={styles.metodoHead}>
+          <h2 id="metodo-title" className={styles.metodoTitle}>
+            {c.metodo.title}
+          </h2>
+          <p>{c.metodo.intro}</p>
+        </div>
+        <ol className={styles.points}>
+          {c.metodo.points.map((pt, i) => (
+            <li key={pt.t}>
+              <span className={styles.num}>{String(i + 1).padStart(2, "0")}</span>
+              <h3>{pt.t}</h3>
+              <p>{pt.d}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      {teaching.length > 0 && (
+        <section className={styles.upcoming} aria-labelledby="clases-fechas">
+          <h2 id="clases-fechas" className={styles.metodoTitle}>
+            {c.upcoming}
+          </h2>
+          <Listing months={groupByMonth(teaching)} lang={lang} />
+        </section>
+      )}
+
       <div className={styles.proof}>
         <p>{c.proof}</p>
         <p className={styles.position}>{c.position}</p>
       </div>
     </section>
-  );
-}
-
-function Rows({ rows }: { rows: string[][] }) {
-  return (
-    <dl className={styles.rows}>
-      {rows.map(([k, v]) => (
-        <div key={k}>
-          <dt>{k}</dt>
-          <dd>{v}</dd>
-        </div>
-      ))}
-    </dl>
   );
 }

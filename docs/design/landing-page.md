@@ -1,6 +1,24 @@
 # Landing page — structure spec
 
-The home is one page that carries all three jobs — Asistir, Aprender, Contratar. Sections below are in page order. Tokens come from [tokens.md](./tokens.md); the visual direction is [ADR-0003](../adr/0003-visual-direction-peso-y-lista.md); the references behind every new section, and why the sections sit in this order, are in [research/referencias.md](../research/referencias.md).
+> **Since [ADR-0006](../adr/0006-landing-summary-and-task-pages.md) the home is a summary and each business has its own page.** The site structure, flows and click counts are in [information-architecture.md](./information-architecture.md). The section specs below still hold as **the design of each section**, wherever it now lives:
+>
+> | § | Section | Lives on |
+> |---|---|---|
+> | 1–3 | Header, Hero, Prensa | every page / `/` / `/` |
+> | 4 | Puertas → **Servicios** (five doors, one per task page) | `/` |
+> | 5 | Próximas fechas (the next four; all on `/fechas`) | `/`, `/fechas` |
+> | 6 | Escucha y ve | `/` |
+> | 7 | Programas + programmer band | `/programas` |
+> | 8 | Bio (short; the long form is `/bio`) | `/` |
+> | 9 | Clases (+ how a masterclass works, upcoming masterclasses) | `/clases` |
+> | 10 | Partituras | `/partituras` |
+> | 11 | Encargos | `/encargos` |
+> | 12 | Contacto | `/`, `/contacto` |
+> | 13 | Footer | every page |
+>
+> Changes since: the header nav lists all seven pages from 1100px with the current one underlined; the hero's second CTA is **Contratar** → `/programas`; the bio CTA is **Leer la biografía completa** → `/bio`.
+
+Originally the home was one page that carried all three jobs — Asistir, Aprender, Contratar. Sections below are in that original page order. Tokens come from [tokens.md](./tokens.md); the visual direction is [ADR-0003](../adr/0003-visual-direction-peso-y-lista.md); the references behind every new section, and why the sections sit in this order, are in [research/referencias.md](../research/referencias.md).
 
 Built in Next.js — see [ADR-0005](../adr/0005-nextjs.md). One component per section in `components/`, content in `content/`. The hand-built v1 (`site/index.html`, [ADR-0001](../adr/0001-hand-built-no-framework.md)) stays as the record of what the client approved; sections marked **approved** below are ports of it.
 
@@ -131,4 +149,4 @@ The Anthropic-style grid on `--ground-dark`, columns named for the segments (Asi
 
 ## Not built yet
 
-Deliberately out of scope, so nobody "fixes" their absence: a page per Fecha and per Programa, the press kit page (needs the photo shoot), the *Trayectoria* page, past dates, a newsletter, on-site ticketing, booking with a calendar, and — most important — a way for Mauricio to edit dates without a developer ([ADR-0005](../adr/0005-nextjs.md)).
+Deliberately out of scope, so nobody "fixes" their absence: a page per Fecha and per Programa, the press kit page (needs the photo shoot), past dates, a newsletter, on-site ticketing, booking with a calendar, and — most important — a way for Mauricio to edit dates without a developer ([ADR-0005](../adr/0005-nextjs.md)).

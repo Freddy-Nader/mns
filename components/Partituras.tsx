@@ -9,12 +9,12 @@ import styles from "./Partituras.module.css";
  * concert calendar. The recording is the free sample — Anderson & Roe sell
  * every score next to the video of them playing it.
  */
-export function Partituras({ lang }: { lang: Locale }) {
+export function Partituras({ lang, as: H = "h2" }: { lang: Locale; as?: "h1" | "h2" }) {
   const d = getDictionary(lang).partituras;
   return (
     <section id="partituras" className="alt section wrap">
       <div className="section-head">
-        <h2 className="display">{d.title}</h2>
+        <H className="display">{d.title}</H>
         <p>{d.intro}</p>
       </div>
 

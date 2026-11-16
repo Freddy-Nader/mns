@@ -7,12 +7,41 @@ export const en: Dictionary = {
   intl: "en-US",
 
   meta: {
-    title: "Mauricio Nader — Pianist",
+    title: "Mauricio Nader · Pianist",
     description:
       "Mexican concert pianist, Bellas Artes soloist. Upcoming dates, programmes to book, lessons, scores and commissioned arrangements.",
-    fechasTitle: "Dates — Mauricio Nader",
+    fechasTitle: "Dates · Mauricio Nader",
     fechasDescription:
       "Every published date for Mauricio Nader: recitals, concerts with orchestra and masterclasses.",
+    paginas: {
+      programas: {
+        title: "Programmes · Mauricio Nader",
+        description:
+          "Named concert programmes with set repertoire, and 28 concertos with orchestra, for festivals, venues and institutions.",
+      },
+      clases: {
+        title: "Lessons · Mauricio Nader",
+        description:
+          "Private piano and chamber music lessons, masterclasses in Spanish or English, and the music course.",
+      },
+      partituras: {
+        title: "Scores · Mauricio Nader",
+        description: "Piano arrangements, transcriptions and original works as PDFs, with a video recording to hear before you buy.",
+      },
+      encargos: {
+        title: "Commissions · Mauricio Nader",
+        description: "Arrangements, transcriptions and new works to order, for concerts, events, records or film.",
+      },
+      bio: {
+        title: "Biography · Mauricio Nader",
+        description:
+          "Career, training, awards, orchestras, recordings and press of Mauricio Nader, Mexican pianist and Bellas Artes soloist.",
+      },
+      contacto: {
+        title: "Contact · Mauricio Nader",
+        description: "Booking, lessons, commissions and press. One route for each, and a direct line.",
+      },
+    },
   },
 
   nav: {
@@ -21,6 +50,8 @@ export const en: Dictionary = {
     programas: "Programmes",
     clases: "Lessons",
     partituras: "Scores",
+    encargos: "Commissions",
+    bio: "Bio",
     contacto: "Contact",
     open: "Open menu",
     close: "Close menu",
@@ -52,29 +83,45 @@ export const en: Dictionary = {
     eyebrow: "Pianist · Bellas Artes Soloist",
     line: "From the Baroque to the movies, in twenty-two countries and more than thirty albums.",
     fechas: "Upcoming dates",
-    contacto: "Get in touch",
+    contratar: "Book a concert",
     photoAlt: "Mauricio Nader portrayed inside the open lid of a grand piano.",
   },
 
   prensa: { label: "Press" },
 
-  puertas: {
-    label: "What you can do here",
-    asistir: {
-      title: "Hear him live",
+  servicios: {
+    title: "Services",
+    conciertos: {
+      label: "Concerts",
+      title: "Hear it live",
       next: "Next date",
       none: "See the full calendar.",
       cta: "See dates",
     },
-    aprender: {
-      title: "Learn with him",
-      text: "Private lessons, masterclasses and a music course, for students, professionals and amateurs.",
+    programas: {
+      label: "Programmes",
+      title: "Book a concert",
+      text: "{n} named programmes and 28 concertos with orchestra, ready for festivals, seasons and institutions.",
+      cta: "See programmes",
+    },
+    clases: {
+      label: "Lessons",
+      title: "Take lessons",
+      text: "Private piano and chamber music lessons, masterclasses in Spanish or English, and a music course.",
+      next: "Next masterclass",
       cta: "See lessons",
     },
-    contratar: {
-      title: "Bring him to your stage",
-      text: "{n} named programmes and 28 concertos with orchestra, ready for your season.",
-      cta: "See programmes",
+    partituras: {
+      label: "Scores",
+      title: "Buy scores",
+      text: "{n} piano arrangements, transcriptions and original works as PDFs, from {min}.",
+      cta: "See scores",
+    },
+    encargos: {
+      label: "Commissions",
+      title: "Commission an arrangement",
+      text: "Arrangements, transcriptions and new works, written for a concert, an event or a recording.",
+      cta: "Start a commission",
     },
   },
 
@@ -82,8 +129,7 @@ export const en: Dictionary = {
     title: "Upcoming dates",
     pageTitle: "Dates",
     pageIntro: "Every published date, from the nearest to the furthest.",
-    and: "and",
-    of: "",
+    resumen: "The next {n} of {total} published.",
     all: "See all dates",
     empty: "No dates are published right now.",
     noTime: "Time to be confirmed",
@@ -102,7 +148,7 @@ export const en: Dictionary = {
 
   escucha: {
     title: "Watch & listen",
-    intro: "His concerts and his arrangements, on video.",
+    intro: "Recitals, concertos with orchestra and piano arrangements, on video.",
     channel: "See all {n} videos on YouTube",
     play: "Play",
     playing: "Now playing",
@@ -113,7 +159,7 @@ export const en: Dictionary = {
   programas: {
     title: "Programmes",
     intro: "Complete concerts with a name and a fixed repertoire, ready for your season.",
-    featured: "His most active programme · {n} dates in {year}",
+    featured: "The programme with the most dates · {n} in {year}",
     upcoming: "Upcoming dates for this programme",
     request: "Request this programme",
     requestShort: "Request",
@@ -125,9 +171,9 @@ export const en: Dictionary = {
     photoAlt: "Mauricio Nader at a Piano de Película recital, seen from the audience.",
     booking: {
       title: "Programming a season?",
-      text: "Write for availability, fees and press material: biography, photographs and concerto repertoire.",
+      text: "Availability and fees through the booking form. Biography, photographs and concerto repertoire in the press kit.",
       emergency:
-        "Available for emergency replacements: he prepares concerts, recordings and courses at short notice when another soloist cancels.",
+        "Emergency replacements. Concerts, recordings and courses prepared at short notice when another soloist cancels, subject to available dates.",
       cta: "Check availability",
       kit: "Request the press kit",
       stats: [
@@ -145,7 +191,7 @@ export const en: Dictionary = {
       "He began playing at nine and at nineteen made his solo debut with the National Symphony Orchestra at the Palacio de Bellas Artes. He studied at the National Conservatory, in Houston and at Eastman, where he was unanimously awarded the Performer’s Certificate.",
       "Today he is a Bellas Artes soloist at the rank of concertino. He has played in twenty-two countries, recorded more than thirty albums and gave the Mexican premiere of George Crumb’s Makrokosmos. He teaches private lessons, gives masterclasses and writes arrangements on commission.",
     ],
-    cta: "Request the full biography",
+    cta: "Read the full biography",
     photoA: "Mauricio Nader in profile, playing a grand piano before an audience.",
     photoB: "Mauricio Nader in recital at the Casona de Xicoténcatl, seen from the audience.",
   },
@@ -185,15 +231,39 @@ export const en: Dictionary = {
       cta: "Rules and registration",
     },
     proof:
-      "His students have won national and international competitions and gone on to the Manhattan School of Music, the University of Houston, the Giuseppe Verdi Conservatory in Milan and the Rotterdam Conservatory.",
+      "Students from these lessons have won national and international competitions and gone on to the Manhattan School of Music, the University of Houston, the Giuseppe Verdi Conservatory in Milan and the Rotterdam Conservatory.",
     position:
-      "Since 2006 he has been academic director and piano professor at the Centro Mexicano de Posgrados en Música in Puebla.",
+      "Academic director and piano professor at the Centro Mexicano de Posgrados en Música, Puebla, since 2006.",
+    metodo: {
+      title: "What a masterclass involves",
+      intro:
+        "In Spanish or English, in any city. Each participant gets attention suited to their level, personality and interests.",
+      points: [
+        {
+          t: "Making music more naturally",
+          d: "Technique, musicality, phrasing, memory, concentration and ways of studying a work, with habits that cost less physical and mental strain.",
+        },
+        {
+          t: "Playing for an audience",
+          d: "Each participant performs repertoire of their choice, from the Baroque to the contemporary, and may record it to study later.",
+        },
+        {
+          t: "Open to listeners",
+          d: "Musicians and the general public are welcome to attend and listen.",
+        },
+        {
+          t: "Direct dialogue",
+          d: "Open questions and conversation between teacher and participants.",
+        },
+      ],
+    },
+    upcoming: "Upcoming masterclasses and courses",
   },
 
   partituras: {
     title: "Scores",
     intro:
-      "His arrangements, transcriptions and original works, as PDFs. Before you buy, hear him play them.",
+      "Piano arrangements, transcriptions and original works as PDFs. Most have a video recording to hear before you buy.",
     tipo: {
       arreglo: "Arrangement",
       transcripcion: "Transcription",
@@ -202,18 +272,19 @@ export const en: Dictionary = {
     listen: "Listen",
     buy: "Buy",
     store: "See all {n} in the store",
-    note: "Payment and download in his online store, Lemon Squeezy.",
+    note: "Instant payment and download in the online store (Lemon Squeezy).",
   },
 
   encargos: {
     title: "Commissions",
     intro:
-      "Arrangements, transcriptions and new works, written for your project. It is the craft behind his scores: Moncayo’s Huapango, Rhapsody in Blue, El amor brujo.",
-    film: "He also records piano for film and television: Alonso Ruizpalacios’s Güeros is one of those films.",
+      "Arrangements, transcriptions and new works, written for a specific project. It is the same craft as the scores for sale, such as Moncayo’s Huapango, Rhapsody in Blue and El amor brujo.",
+    film: "Piano recording for film and television too, such as Alonso Ruizpalacios’s film Güeros.",
     price:
       "The fee depends on length, instrumentation and delivery date. First a conversation, then a quote.",
+    scores: "Hear the arrangements",
     form: {
-      label: "Tell him about your project",
+      label: "Describe your project",
       que: {
         label: "What do you need?",
         options: ["Arrangement", "Transcription", "New work", "Recording", "Other"],
@@ -230,7 +301,7 @@ export const en: Dictionary = {
         label: "By when?",
         options: ["Under a month", "One to three months", "Over three months", "No fixed date"],
       },
-      detalles: { label: "Tell him more", placeholder: "The piece, its length, who will play it…" },
+      detalles: { label: "More details", placeholder: "The piece, its length, who will play it…" },
       nombre: { label: "Your name", placeholder: "First and last name" },
       optional: "optional",
       whatsapp: "Send on WhatsApp",
@@ -280,6 +351,23 @@ export const en: Dictionary = {
       bio: "Full biography",
       programa: "Programme",
       masterclass: "Masterclass",
+    },
+  },
+
+  bioPage: {
+    title: "Biography",
+    lead: "Mexican pianist, Bellas Artes soloist. On stage since the age of nine, he has played in twenty-two countries on four continents, recorded more than thirty albums and given Mexican premieres of works never heard here before.",
+    photoAlt: "Mauricio Nader in profile, playing a grand piano before an audience.",
+    trayectoria: "Career",
+    datos: "Facts",
+    prensa: "Press",
+    prensaIntro: "Quotes in their original language, as published.",
+    close: {
+      title: "A date in your season?",
+      text: "Availability and fees through the booking form. A short version of this biography for programme notes comes in the press kit.",
+      cta: "Check availability",
+      kit: "Request the press kit",
+      programas: "See programmes",
     },
   },
 

@@ -27,24 +27,6 @@
   letter-spacing: -0.015em;
 }
 
-.rows {
-  width: 100%;
-  margin-bottom: 8px;
-}
-.rows div {
-  display: grid;
-  grid-template-columns: 112px minmax(0, 1fr);
-  gap: 12px;
-  padding-block: 12px;
-  border-bottom: 1px solid var(--hairline);
-  font-size: 15px;
-}
-.rows dt {
-  color: var(--dim);
-}
-.rows dd {
-  overflow-wrap: anywhere;
-}
 .offer :global(.btn) {
   margin-top: auto;
 }
@@ -64,4 +46,78 @@
   font-size: 17px;
   line-height: 1.6;
   color: var(--dim);
+}
+
+/* ---- how a masterclass works (his 2026 CV) ---- */
+.metodo,
+.upcoming {
+  margin-top: 96px;
+}
+.metodoHead {
+  display: grid;
+  gap: 16px 64px;
+  margin-bottom: 32px;
+}
+@media (min-width: 1000px) {
+  .metodoHead {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: end;
+  }
+}
+.metodoHead p {
+  max-width: 52ch;
+  font-size: 17px;
+  color: var(--dim);
+  text-wrap: pretty;
+}
+.metodoTitle {
+  font-size: clamp(28px, 3.2vw, 44px);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+.upcoming .metodoTitle {
+  margin-bottom: 32px;
+}
+.points {
+  display: grid;
+  border-top: 2px solid var(--ink);
+}
+@media (min-width: 800px) {
+  .points {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 48px;
+  }
+}
+@media (min-width: 1200px) {
+  .points {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+.points li {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-block: 20px 28px;
+  border-bottom: 1px solid var(--hairline);
+}
+@media (min-width: 1200px) {
+  .points li {
+    border-bottom: 0;
+  }
+}
+.num {
+  font-size: 15px;
+  color: var(--dim);
+  font-variant-numeric: tabular-nums;
+}
+.points h3 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+.points p {
+  font-size: 16px;
+  line-height: 1.55;
+  text-wrap: pretty;
 }
