@@ -17,6 +17,14 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/fechas">):
   return {
     title: d.meta.fechasTitle,
     description: d.meta.fechasDescription,
+    openGraph: {
+      type: "website",
+      url: href(lang, "/fechas"),
+      title: d.meta.fechasTitle,
+      description: d.meta.fechasDescription,
+      locale: lang === "es" ? "es_MX" : "en_US",
+      images: [{ url: "/img/hero.jpg", width: 1600, height: 1066, alt: d.hero.photoAlt }],
+    },
     alternates: {
       canonical: href(lang, "/fechas"),
       languages: { es: "/fechas", en: "/en/fechas", "x-default": "/fechas" },

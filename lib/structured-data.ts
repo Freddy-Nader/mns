@@ -21,6 +21,17 @@ export function personLd() {
   };
 }
 
+export function websiteLd(lang: Locale) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: site.name,
+    url: siteUrl,
+    inLanguage: lang === "es" ? "es-MX" : "en",
+    publisher: { "@type": "Person", name: site.name },
+  };
+}
+
 export function eventsLd(fechas: Fecha[], lang: Locale) {
   return fechas
     .filter((f) => f.tipo !== "curso" && f.recinto.nombre)

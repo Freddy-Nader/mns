@@ -1,9 +1,14 @@
 /**
- * Absolute origin for metadata and structured data. Set SITE_URL once the
- * domain is decided; on Vercel the production URL is used until then.
+ * Absolute origin for metadata, sitemap and structured data. Set SITE_URL (or
+ * NEXT_PUBLIC_SITE_URL) to the final domain. Without either, the production
+ * deployment's domain is used, and finally the current Vercel host or localhost.
  */
-export const siteUrl =
-  process.env.SITE_URL ??
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : "http://localhost:3000");
+const configured = process.env.SITE_URL ?? process.env.NEXT_PUBLIC_SITE_URL;
+
+const fallback = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : process.env.NODE_ENV === "production"
+    ? "https://mauricionader.vercel.app"
+    : "http://localhost:3000";
+
+export const siteUrl = (configured ?? fallback).replace(/\/+$/, "");
