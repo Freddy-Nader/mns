@@ -1,4 +1,4 @@
-# Plan 004: New YouTube uploads appear in the Studio and on the site within an hour, with no API key
+# Plan 004: New YouTube uploads appear in the Studio and on the site within 12 hours, with no API key
 
 > **Executor instructions**: Follow this plan step by step. Run every
 > verification command and confirm the expected result before moving to the
@@ -21,15 +21,15 @@
 
 ## Why this matters
 
-The video showcase is a hand-picked list. Every new upload needs someone to add it. With this plan an hourly job copies new uploads into Sanity as `video` documents with `estado: "auto"`. Mauricio can then pin, hide or retitle them in the Studio, and pick them as a score's recording (issue #6). Because the videos land in Sanity, the score picker sees synced videos too, and the Sanity webhook from plan 003 refreshes the site on its own.
+The video showcase is a hand-picked list. Every new upload needs someone to add it. With this plan a job that runs every 12 hours copies new uploads into Sanity as `video` documents with `estado: "auto"`. Mauricio can then pin, hide or retitle them in the Studio, and pick them as a score's recording (issue #6). Because the videos land in Sanity, the score picker sees synced videos too, and the Sanity webhook from plan 003 refreshes the site on its own.
 
 ## Design decisions (already made, do not revisit)
 
 - **Source**: the channel's public RSS feed for **long-form uploads only**:
   `https://www.youtube.com/feeds/videos.xml?playlist_id=UULF<channel id without its leading "UC">`
-  The `UULF` prefix excludes Shorts. It is community-documented, not official, so the job logs and exits 0 when the feed returns non-200 (it had intermittent 404s in Dec 2025) and simply tries again next hour. The feed returns the latest ~15 uploads, which is enough because it runs hourly.
+  The `UULF` prefix excludes Shorts. It is community-documented, not official, so the job logs and exits 0 when the feed returns non-200 (it had intermittent 404s in Dec 2025) and simply tries again at the next run. The feed returns the latest ~15 uploads, which is enough because it runs every 12 hours.
 - **No API key.** Nothing YouTube-related is a secret.
-- **Runner**: a GitHub Actions `schedule` (hourly), because Vercel Hobby cron runs only once a day. The repo is public, so Actions minutes are free.
+- **Runner**: a GitHub Actions `schedule` (every 12 hours), because Vercel Hobby cron runs only once a day. The repo is public, so Actions minutes are free.
 - **Write rules**: create a doc only when no `video` doc already has that YouTube id in its `youtube` field. Use `_id: "video-<id>"` with `createIfNotExists`. Set `tituloYoutube`, `publicado`, `posterHD`, `estado: "auto"`, `youtube: "https://www.youtube.com/watch?v=<id>"`. **Never** patch or delete existing docs.
 - **posterHD**: `HEAD https://i.ytimg.com/vi/<id>/maxresdefault.jpg` → 200 means `true`.
 - **Showcase rule** (already in `lib/cms/map.ts` `showcase`): fijados in order, then the newest `videosRecientes` autos. `ajustes.videosRecientes` is 0 after migration, so nothing visible changes until the operator raises it in the Studio.
@@ -90,7 +90,7 @@ Save a real feed to `tests/fixtures/youtube-feed.xml` (trim to 3 entries) and wr
 
 ### Step 3: Workflow
 
-`.github/workflows/sync-videos.yml`: `on: schedule: - cron: "17 * * * *"` plus `workflow_dispatch`. One job, `ubuntu-latest`, `timeout-minutes: 5`, Node 22, no `npm ci` (the script has no dependencies), run the script with `SANITY_WRITE_TOKEN: ${{ secrets.SANITY_WRITE_TOKEN }}`. `permissions: contents: read`.
+`.github/workflows/sync-videos.yml`: `on: schedule: - cron: "17 */12 * * *"` plus `workflow_dispatch`. One job, `ubuntu-latest`, `timeout-minutes: 5`, Node 22, no `npm ci` (the script has no dependencies), run the script with `SANITY_WRITE_TOKEN: ${{ secrets.SANITY_WRITE_TOKEN }}`. `permissions: contents: read`.
 
 **Verify**: `npx --yes action-validator .github/workflows/sync-videos.yml` exits 0. If that tool is unavailable, check that `python3 -c "import yaml,sys; yaml.safe_load(open(sys.argv[1]))" .github/workflows/sync-videos.yml` exits 0.
 
@@ -111,7 +111,7 @@ After merge, the operator triggers the workflow once from the Actions tab. New `
 - [ ] `npm test` exits 0 with the new RSS tests
 - [ ] dry run exits 0
 - [ ] `grep -rn "patch\|delete" studio/scripts/sync-videos.ts` prints nothing (the script never edits or deletes)
-- [ ] workflow file is valid YAML with an hourly `schedule` and `workflow_dispatch`
+- [ ] workflow file is valid YAML with a 12-hour `schedule` and `workflow_dispatch`
 - [ ] no YouTube API key and no token value anywhere in the diff
 
 ## STOP conditions

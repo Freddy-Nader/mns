@@ -24,7 +24,7 @@ The CMS is Sanity (decided 2026-11-17, open to change later). Every Sanity-speci
 | 001 | Sanity Studio in Spanish and ADR-0007 | P1 | M | none | #4, #6 | TODO |
 | 002 | Migrate current content to Sanity | P1 | S | 001 | #4 | TODO |
 | 003 | Site reads from Sanity, publish in under a minute | P1 | L | 001, 002 | #4, #6 | TODO |
-| 004 | Hourly YouTube sync, no API key | P2 | M | 003 | #5, #6 | TODO |
+| 004 | YouTube sync every 12 hours, no API key | P2 | M | 003 | #5, #6 | TODO |
 | 005 | Spanish guide for Mauricio and operator runbook | P2 | S | 003, 004 | #4 | TODO |
 | 006 | QA polish pass, findings only | P2 | M | 003 | #3 | TODO |
 | 007 | Social post drafts by email (future, design and spike) | P3 | M | 003 | #7 | TODO |
@@ -52,7 +52,7 @@ Status values are TODO, IN PROGRESS, DONE, BLOCKED (with a one-line reason) and 
 ## Findings considered and rejected
 
 - **Keystatic**: no release since December 2025 and an open report of a blank admin on Next 16 with Turbopack. Revisit only if Sanity is dropped.
-- **Vercel Cron for the video sync**: the Hobby plan runs crons once a day, but issue #5 asks for one hour or less. GitHub Actions is used instead.
+- **Vercel Cron for the video sync**: the Hobby plan runs crons once a day, but issue #5 asked for a short delay, so the sync runs every 12 hours. GitHub Actions is used instead.
 - **YouTube Data API**: needs a key. The long-form RSS feed (`UULF` playlist) is enough for the latest uploads and excludes Shorts.
 - **Embedding the Studio at `/studio` in the Next app**: it would add Sanity's bundle to the site build for no gain over the hosted `*.sanity.studio`.
 - **Storing social drafts or raw media in Sanity**: the free plan's dataset is public.

@@ -26,7 +26,7 @@ The whole point of the CMS is that Mauricio does not depend on the operator for 
 ## Current state
 
 - Studio sidebar (plan 001): Fechas, Partituras, Videos, Programas, Prensa, Ajustes.
-- Video states: Automático, Fijado, Oculto. Deleting a synced video makes it come back on the next hourly sync (plan 004), so the guide must say to hide, not delete.
+- Video states: Automático, Fijado, Oculto. Deleting a synced video makes it come back on the next sync (every 12 hours) (plan 004), so the guide must say to hide, not delete.
 - Publishing: Sanity saves drafts automatically. Nothing changes on the site until he presses **Publicar**. After that the site updates on the next visit (plan 003 webhook).
 - Repo language rules (operator's standing rule): docs for people exist in English (`README.md`) plus a Spanish copy. Everything the end user sees is in Spanish. Mauricio is the end user here.
 - Writing style the operator requires in every doc: plain sentences joined with words like "porque", "así que", "es decir". Avoid colons, semicolons and dashes in running prose. No numbers in headings.
